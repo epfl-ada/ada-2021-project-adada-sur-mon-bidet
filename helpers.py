@@ -176,31 +176,32 @@ def euclidean_dist(center1, center2):
 def cosine_sim(center1, center2):
     return np.sum(center1 * center2) / (np.linalg.norm(center1) * np.linalg.norm(center2))
 
-def normalized_cut(set1, set2, d):
+
+def __dist(single_point, X):
+    
+    
+    return (((X @ single_point) / np.sum(X ** 2, axis=1))) / (np.linalg.norm(single_point))
+
+
+def normalized_cut(set1, set2):
     ### MemoryError: Unable to allocate 17.2 GiB for an array with shape (7683983, 2, 300) and data type float32
     # pairs = np.array(list(itertools.product(set1, set2)))
     # d_ = lambda pair : d(pair[0], pair[1])
     # return d_(pairs)
 
-
-
-    #####   AWEFUL
     d12 = 0
-    for x in set1 :
-        for y in set2 :
-            d12 += d(x, y)
-
     d1 = 0
-    for i in range(len(set1)):
-        for j in range(i, len(set1)):
-            d1 += d(set1[i], set1[j])
-    
+    for x in set1:
+        d1 += np.nansum(__dist(x, set1))
+        d12 += np.nansum(__dist(x, set2))
+
+
     d2 = 0
-    for i in range(len(set2)):
-        for j in range(i, len(set2)):
-            d2 += d(set2[i], set2[j])
+    for x in set2:
+        d2 += np.nansum(__dist(x, set2))
     
-    return (d12 / (d1 + d12)) + (d12 / (d2 + d12))
+
+    return (d12 / (d12 + d1)) + (d12 / (d12 + d2))
 
 
 
