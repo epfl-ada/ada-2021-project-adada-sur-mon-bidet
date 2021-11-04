@@ -1,3 +1,9 @@
 *.model
 *.json
 *.bz2
+*.png
+env
+*.GIF
+*.npy
+.ipynb_checkpoints
+__pycache__
