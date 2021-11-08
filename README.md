@@ -1,5 +1,5 @@
 # Polarization around climate change: 
-##Is it growing as fast as the polar circle is shrinking ? 
+## Is it growing as fast as the polar circle is shrinking ? 
 
 ## Abstract:
 As the effects of climate change become increasingly visible in our daily life, it is time for humanity to come together for a joint effort to come back to an equilibrium with nature. A joint effort requires collaboration and agreement on what climate change is and what we should do. In this data story, we will study the polarization of opinions around climate change that tend to make this collaboration diffcult to accomplish, and examine its dynamics. This will be done through the lense of Quotebank, an open corpus of 178 million quotations
