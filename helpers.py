@@ -19,7 +19,7 @@ nltk.download('stopwords')
 
 stopwords = stopwords.words()
 
-__path_to_file = './quotes-2020.json.bz2' 
+__path_to_file = 'data/quotes-2020.json.bz2' 
 
 
 __SAMPLE_SIZE = 10
