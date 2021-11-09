@@ -40,16 +40,18 @@ In our case, we will try to measure polarization of these different quotes by a 
 
  We will use two methods : sentiment analysis and word embeddings
 
-Sentiment analysis is a technique that allows us to extract, identify and quantify affective states in text. The most basic task of sentiment analysis is classifying and quantifying the polarity of a given text in 3 classes {positive, neutral, negative}. Sentiment analysis will let us assign a "sentiment" polarity score to a quote.
+Sentiment analysis is a technique that allows us to extract, identify and quantify affective states in text. The most basic task of sentiment analysis is classifying and quantifying the polarity of a given text in 3 classes {positive, neutral, negative}. Sentiment analysis will let us assign a "sentiment" polarity score to a quote. After reviewing the literature on sentiment analysis, we decided not to train our own classifier but to use an already exisiting tool. We are using VADER[^fn1] (Valence Aware Dictionary and sEntiment Reasoner), a lexicon and rule-based sentiment analysis tool. It is specifically attuned to sentiments expressed in social media but it has been shown to generalize very well. Furthermore, it is able to account for differences in the sentiment intensity of words using the sentiment valence (continous feature ranging from -1 to 1). For example, the valence for betray is -0.83, bland is -0.2475, dream is 0.4325, and delight is 0.815. This will let us capture more accurately the true extremes.
+
+The ideal goal would be to assign a single or multiple metrics to a quote that quantifies accurately its polarization we defined above.
 
  Word embeddings aim to quantify and categorize semantic similarities between linguistic items based on their distributional properties in large samples of language data. The underlying idea that "a word is characterized by the company it keeps". To put it simply, word embeddings map a word to a "semantic space" i.e. N-dimensional space where words with very different meanings should have a large distance between them. Therefore, in theory, two quotes at the different ends of the spectrum should have a large distance between them and this would let us compute a "polarity distance" between quotes. Additionally, one might use clustering to group similar quotes and hope to get that quotes in the same cluster share the same opinion.
 
  Although, one needs to be cautious before using word embeddings.
 
-Word embeddings might not give us enough separation between positive and negative quotes since most of the words in a quote will be "neutral" and in the theme of climate change (e.g. "climate","warming","environment"). Thus, to only retain important information about the tone of the quote, one would further need to filter out climate-related words such that the semantic space is better separated.
+COMMENT OUT (Word embeddings might not give us enough separation between positive and negative quotes since most of the words in a quote will be "neutral" and in the theme of climate change (e.g. "climate","warming","environment"). Thus, to only retain important information about the tone of the quote, one would further need to filter out climate-related words such that the semantic space is better separated.)
 
 
-The ideal goal would be to assign a single or multiple metrics to a quote that quantifies accurately its polarization we defined above.
+
 
 ### How to visualize polarization ?:
 
@@ -86,3 +88,4 @@ Seasonality would let us observe if there's any recurring event (climate confere
 ## Questions for TAs:
 
 
+[^fn1]: Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
