@@ -23,7 +23,9 @@ Nothing yet
 
 ### Preprocessing
 
-(EXPLAIN filtering)
+We filtered the original Quotebank 2015-2020 json files, keeping only quotations with known speakers (certainty > 0.9) and contains a word related to climate change. To distinguish "words relating to climate change", we constructed a 'base' dictionnary from various online sources, and a 'wide' dictionnary of more questionnable pertinence, which extends the basis with nltk's wordnet. Also, urls are stripped to domain names as we do not intend to access the full articles. Results of this preliminary filtering are in the 'output' directory.
+
+These new jsons are further preprocessed into yearly chunks of 500 000 quotations and saved in pickle format to reduced loading times. These are also found in the 'output' directory as 'df_year_chunkidx'.
 
 We assume that the quotes that we are working in the following sections should all have the theme of climate change. 
 
