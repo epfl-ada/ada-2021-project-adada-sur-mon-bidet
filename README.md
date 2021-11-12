@@ -25,7 +25,7 @@ Wikipedia will be used to fetch more information about each quoted person.
 
 We filtered the original Quotebank 2015-2020 json files, keeping only quotations with known speakers (certainty > 0.9) and contains a word related to climate change. To distinguish "words relating to climate change", we constructed a 'base' dictionnary from various online sources, and a 'wide' dictionnary of more questionnable pertinence, which extends the basis with nltk's wordnet. Also, urls are stripped to domain names as we do not intend to access the full articles. Results of this preliminary filtering are in the 'output' directory.
 
-These new jsons are further preprocessed into yearly and overall pickles to reduce loading times.
+These new jsons are further preprocessed into yearly pickles to reduce loading times.
 
 We assume that the quotes that we are working on in the following sections should all have the theme of climate change.
 
@@ -47,9 +47,9 @@ Sentiment analysis is a technique that allows us to extract, identify and quanti
 
  
 
-Nevertheless, word embedding might not give us enough separation between positive and negative quotes since most of the words in a quote will be "neutral" and in the theme of climate change (e.g. "climate", "warming", "environment"). Thus, to only retain important information about the tone of the quote, one would further need to filter out climate-related words such that the semantic space is better separated. 
+Nevertheless, word embedding might not give us enough separation between positive and negative quotes since most of the words in a quote will be "neutral" and in the theme of climate change (e.g. "climate", "warming", "environment"). To only retain important information about the tone of the quote, one would further need to filter out climate-related words such that the semantic space is better separated. 
 
-The ideal goal would be to assign a single or multiple metrics to a quote that quantifies accurately the polarization we defined above as done in this[paper](https://ieeexplore.ieee.org/document/8181508).
+The ideal goal would be to assign a single or multiple metrics to a quote that quantifies accurately the polarization we defined above as done in this [paper](https://ieeexplore.ieee.org/document/8181508).
 
 ### How to visualize polarization ?:
 
