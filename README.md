@@ -45,9 +45,9 @@ Sentiment analysis is a technique that allows us to extract, identify and quanti
 
  Word embedding aims to quantify and categorize semantic similarities between linguistic items based on their distributional properties in large samples of language data. To put it simply, word embedding maps a word to a "semantic space" i.e. N-dimensional space where words with very different meanings should have a large distance between them. Therefore, in theory, two quotes at the different ends of the spectrum should have a large distance between them and this would let us compute a "polarity distance" between quotes. Additionally, one might use clustering to group similar quotes and hope to get that quotes in the same cluster to share the same opinion.
 
- Although, one needs to be cautious before using word embedding.
+ 
 
-Word embedding might not give us enough separation between positive and negative quotes since most of the words in a quote will be "neutral" and in the theme of climate change (e.g. "climate", "warming", "environment"). Thus, to only retain important information about the tone of the quote, one would further need to filter out climate-related words such that the semantic space is better separated. 
+Nevertheless, word embedding might not give us enough separation between positive and negative quotes since most of the words in a quote will be "neutral" and in the theme of climate change (e.g. "climate", "warming", "environment"). Thus, to only retain important information about the tone of the quote, one would further need to filter out climate-related words such that the semantic space is better separated. 
 
 The ideal goal would be to assign a single or multiple metrics to a quote that quantifies accurately the polarization we defined above as done in this[paper](https://ieeexplore.ieee.org/document/8181508).
 
