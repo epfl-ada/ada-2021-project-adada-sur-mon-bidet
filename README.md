@@ -47,7 +47,9 @@ Sentiment analysis is a technique that allows us to extract, identify and quanti
 
  Although, one needs to be cautious before using word embedding.
 
-Word embedding might not give us enough separation between positive and negative quotes since most of the words in a quote will be "neutral" and in the theme of climate change (e.g. "climate", "warming", "environment"). Thus, to only retain important information about the tone of the quote, one would further need to filter out climate-related words such that the semantic space is better separated.
+Word embedding might not give us enough separation between positive and negative quotes since most of the words in a quote will be "neutral" and in the theme of climate change (e.g. "climate", "warming", "environment"). Thus, to only retain important information about the tone of the quote, one would further need to filter out climate-related words such that the semantic space is better separated. 
+
+This [paper](https://ieeexplore.ieee.org/document/8181508) uses a similar way to assess polarization between tweets. We will use it as an inspiration.
 
 
 The ideal goal would be to assign a single or multiple metrics to a quote that quantifies accurately the polarization we defined above.
