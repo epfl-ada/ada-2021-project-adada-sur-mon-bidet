@@ -31,7 +31,7 @@ We assume that the quotes that we are working on in the following sections shoul
 
 ### How to measure and extract polarization ?:
 
-First, let us define polarization.
+Let us define polarization.
 
 *Polarization: a state in which the opinions, beliefs, or interests of a group or society no longer range along a continuum but become concentrated at opposing extremes.*
 
