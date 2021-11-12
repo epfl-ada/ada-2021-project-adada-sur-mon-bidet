@@ -26,7 +26,7 @@ Wikipedia will be used to fetch more informations about each quoted person.
 
 (EXPLAIN filtering)
 
-We assume that the quotes that we are working in the following sections should all have the theme of climate change. $
+We assume that the quotes that we are working in the following sections should all have the theme of climate change. 
 
 ### How to measure and extract polarization ?:
 
@@ -68,7 +68,9 @@ Seasonality would let us observe if there's any recurring event (climate confere
 
 ### Confronting our observations with the demographic
 
-Now that we have [WIP (c'est pour un sync express promis)]
+Now that we have the evolution of the polarization over time, we can try to spot some correlation between the polarization clusters and the profile of the speakers. Namely their gender, age and polical affiliation (we might expand to more features in the future). 
+
+To do so, we are fetching the wikipedia page of each speaker and are running some rough (but surprisingly relatively accurate) euristics to guess all of those features. 
 
 
 ## Proposed timeline:
