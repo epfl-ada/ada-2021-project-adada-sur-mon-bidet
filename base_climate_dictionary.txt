@@ -21,7 +21,7 @@ hydrosphere
 methane
 precipitation
 solar
-temperatureemissions
+emissions
 energy
 gas
 gases
@@ -42,7 +42,8 @@ net-zero
 deforestation
 sustainable
 sustainability
-hydroalbedo
+hydro
+albedo
 anthropogenic
 atmosphere
 biofuels
@@ -55,7 +56,8 @@ biodiversity
 ozone
 recycling
 resilience
-wastewatermitigation
+waste-water
+mitigation
 anthropocene
 AR4
 AR5
