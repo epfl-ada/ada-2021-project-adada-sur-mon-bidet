@@ -94,6 +94,9 @@ def to_lower(prep_text):
 def to_text(prep_text):
     return re.sub('[^a-zA-Z]+', ' ', prep_text)
 
+def to_alphanum(prep_text):
+    return re.sub('[^a-zA-Z0-9]+', ' ', prep_text)
+
 def get_tokens(prep_text):
     return nltk.tokenize.word_tokenize(prep_text)
 
