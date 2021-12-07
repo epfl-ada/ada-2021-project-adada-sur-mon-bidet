@@ -83,12 +83,11 @@ To do so, we are fetching the Wikipedia page of each speaker and are running som
 
 ## Organization within the team:
 
-- *Paul Juillard*: preprocessing expert
-- *Antoine Magron*: word embedding magician
-- *Lucas Trognon*: Wikipedia dump adept
-- *Harold Benoit*: sentiment analysis guru
+- *Paul Juillard*: Preprocessing
+- *Antoine Magron*: Word embedding
+- *Lucas Trognon*: Wikipedia
+- *Harold Benoit*: Sentiment analysis
 
 
-## Questions for TAs:
 
 
