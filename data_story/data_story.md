@@ -17,27 +17,56 @@ We'll first do a quantitative review of the speakers. Explanation of how we used
 
 ### BAR CHART
 
+The race between speaker
+
 ### Evolution of the most quoted speaker
 
-### Gender of the speakers
+### Expending the dataset : scraped feature
+##### Gender of the speakers
 
-### Age of the speakers
+##### Age of the speakers
 
-### Political party of the speaker
+##### Political party of the speaker
 
-### Profil type
+### Word embedding 
+Juste technique pour avoir de spoints par feature ==> feature pour speaker
+### Clustering 
+Scatterplot avec des tête de barack dessus
 
-### Correlations
+##### Profil type
+
 
 
 ## How do we speak about climate ? The fine details of its narrative in the news
 
+### Feature de polarization
 
 ### Evolution of polarization
 
+Relativement constant (mean, std)
+
 ### Polemic topics (time series analysis bb)
 
+Which topic is important to which wing. Topic pour lequel chaque wing est polarisé. 
+
 ### Semantic separation (ANTOINE)
+
+Distance sémantique entre les groupes (certaines stagnent, diminuent et d'autres augments). Essayer d'avoir GIF avec PCA constantes et PSNE
+
+## Bonus : Input et regarde à qui tu ressembles hihi potit blaugueur
+
+
+
+Requirement de fin :
+
+- s'accorder sur la palette : **magma**
+- s'accorder sur les tailles de figure
+- mettre les titres/ labels en fontsize corrects
+- clean les notebook 
+- save toutes les images avec $\geq 300$ dpi
+plt.savefig(filname, dpi=300)
+
+
 
 
 
