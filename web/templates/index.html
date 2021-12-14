@@ -25,27 +25,58 @@
             <div class ="container-fluid">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class ="nav-link active" href="#" onClick="$('#part1').scrollIntoView();">Part 1</a>
+                        <a class ="nav-link active" href="#" onClick="$('#part1')[0].scrollIntoView();">Part 1</a>
                     </li>
                     <li class="nav-item">
-                    <a class ="nav-link active" href="#" onClick="$('#part2').scrollIntoView();">Part 2</a>
+                    <a class ="nav-link active" href="#" onClick="$('#part2')[0].scrollIntoView();">Part 2</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class ="nav-link active" href="#" onClick="$('#part3')[0].scrollIntoView();">Part 3</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class ="nav-link active" href="#" onClick="$('#part4')[0].scrollIntoView();">Part 4</a>
                     </li> 
                     <li class="nav-item">
                         <a class ="nav-link active" href="/bonus" >Bonus</a>
                     </li>   
                 </ul> 
+                <span class="navbar-text">
+                    ADADA-sur-mon-bidet
+                </span
             </div>
         </nav>
 
 
         <h1 id="home">ADADA sur mon bidet</h1>
 
-        <div>Jeune introduction du dawa, ou l'on présente le dataset, le problème, nos ambitions, and so on.</div>
+        <div>
+            <p>
+                Jeune introduction du dawa, ou l'on hype tout le monde sur ce qu'il va se passer.
+            </p>
+            <p>
+                Contextualisation du problème
+            </p>
+
+        </div>
+
 
         <hr class="mt-2 mb-3"/>
 
 
-        <div class="jumbotron jumbotron-fluid">
+        <div id="part1" class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">The Data</h1>
+                <h2 class="lead mb-2 text-muted" >is dark and full of terrors</p>
+            </div>
+        </div>
+
+
+        <div>Le pro-processing, l'envie de mourir, etc...</div>
+
+        <hr class="mt-2 mb-3"/>
+
+
+        <div id="part2" class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">The race to influence : Giga bar charset</h1>
                 <p class="lead">Distribution du nombre de quote par speaker (genre justed un petit chiffre qui résume (moyenne vs medianne, qqch du genre)</p>
@@ -57,12 +88,12 @@
 
         <hr class="mt-2 mb-3"/>
 
-        <h2 id="">Building personnas</h2>
+        <h2 id=""></h2>
 
-        <div class="jumbotron jumbotron-fluid">
+        <div id="part3" class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Know thy speaker</h1>
-                <p class="lead">Learning more about our speakers so we have more tools to draw conclusions </p>
+                <p class="lead">Learning more about our speakers so we have build personnas </p>
             </div>
         </div>
 
@@ -72,16 +103,27 @@
         <hr class="mt-2 mb-3"/>
 
         <h3>Demographics</h3>
-        We need to know more about our speakers in order to differentiate them on a larger scale, and perhaps spot some peculiar influence on the distribution of their position.
-        Thus, we've chosen to add the gender, age and political affiliation to each speaker. 
-        To do so, we've ran a couple hundred of thousands wikepedia searches on the speakers. 
-        Some of their pages were neatly completed, and add their current political party filled in as well as their birthdate.
-        Sadly, it was <strike>sometimes</strike>, well <strike>rarely</strike>, ... , <b>never</b> the case. 
-        Therefore, we've used some pretty minimalists heuristics to fill in each feature when we couldn't correctly recover the features.
-        For the political affiliation, we simply counted the occcurence of words like "socialist", or "right-wing" in each speakers page. 
-        Likewise, for the gender, we count the occurences of gendered pronoums. If we can't find enough of these pronoums, we use a classifer with the name of the speaker as input.
-        Although both of these heuristics are far from perfect, we've found it, most of the time, passed all the sanity checks.
-        <img src="static/demographics.png" ></img> #TODO Greta sur le violon, Arack Bobama, Sernie Banders, Tronald Drump et un random republicain 
+        <p>
+            We need to know more about our speakers in order to differentiate them on a larger scale, and perhaps spot some peculiar influence on the distribution of their position.
+            Thus, we've chosen to add the gender, age and political affiliation to each speaker. 
+            To do so, we've ran a couple hundred of thousands wikepedia searches on the speakers. 
+            Some of their pages were neatly completed, and their current political party were filled in as well as their birthdate.
+        </p>
+        <p>
+            Sadly, it was <strike>sometimes</strike>, well <strike>rarely</strike>, ... , <b>never</b> the case. 
+            Therefore, we've used some pretty minimalists heuristics to fill in each feature when we couldn't correctly recover the features.
+            For the political affiliation, we simply counted the occcurence of words like "socialist", or "right-wing" in each speakers page. 
+            Likewise, for the gender, we count the occurences of gendered pronoums. If we can't find enough of these pronoums, we use a classifer with the name of the speaker as input.
+            Although both of these heuristics are far from perfect, we've found it, most of the time, passed all the sanity checks.
+            Putting all of this together, we get the neat visualisation below.
+        </p>
+
+
+        <img src="static/demographics.png" ></img> 
+        #TODO Greta sur le violon, Arack Bobama, Sernie Banders, Tronald Drump et un random republicain 
+        <p>
+            Now there's a few things we can see here.   
+        </p>
 
 
         <hr class="mt-2 mb-3"/>
