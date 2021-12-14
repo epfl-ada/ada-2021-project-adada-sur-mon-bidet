@@ -20,156 +20,230 @@
 
     </head>
     <body>
+        <div class ="sticky-top">
+            <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+                <div class ="container-fluid">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class ="nav-link active" href="#" onClick="document.getElementById('part1').scrollIntoView();">Part 1</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class ="nav-link active" href="#" onClick="document.getElementById('part2').scrollIntoView();">Part 2</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class ="nav-link active" href="#" onClick="document.getElementById('part3').scrollIntoView();">Part 3</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class ="nav-link active" href="#" onClick="document.getElementById('part4').scrollIntoView();">Part 4</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class ="nav-link active" href="/bonus" >Bonus</a>
+                        </li>   
+                    </ul> 
+                    <span class="navbar-text">
+                        ADADA-sur-mon-bidet
+                    </span
+                </div>
+            </nav>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class ="container-fluid">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class ="nav-link active" href="#" onClick="$('#part1')[0].scrollIntoView();">Part 1</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class ="nav-link active" href="#" onClick="$('#part2')[0].scrollIntoView();">Part 2</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class ="nav-link active" href="#" onClick="$('#part3')[0].scrollIntoView();">Part 3</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class ="nav-link active" href="#" onClick="$('#part4')[0].scrollIntoView();">Part 4</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class ="nav-link active" href="/bonus" >Bonus</a>
-                    </li>   
-                </ul> 
-                <span class="navbar-text">
-                    ADADA-sur-mon-bidet
-                </span
+            <div class="progress">
+                <div class="progress-bar" id="progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
-        </nav>
+        </div>  
+        <div class="datastory">
 
+            <h1 id="home">ADADA sur mon bidet</h1>
 
-        <h1 id="home">ADADA sur mon bidet</h1>
+            <div>
+                <p>
+                    Jeune introduction du dawa, ou l'on hype tout le monde sur ce qu'il va se passer.
+                </p>
+                <p>
+                    Contextualisation du problème
+                </p>
 
-        <div>
-            <p>
-                Jeune introduction du dawa, ou l'on hype tout le monde sur ce qu'il va se passer.
-            </p>
-            <p>
-                Contextualisation du problème
-            </p>
-
-        </div>
-
-
-        <hr class="mt-2 mb-3"/>
-
-
-        <div id="part1" class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">The Data</h1>
-                <h2 class="lead mb-2 text-muted" >is dark and full of terrors</p>
             </div>
-        </div>
 
 
-        <div>Le pro-processing, l'envie de mourir, etc...</div>
-
-        <hr class="mt-2 mb-3"/>
+            <hr class="mt-2 mb-3"/>
 
 
-        <div id="part2" class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">The race to influence : Giga bar charset</h1>
-                <p class="lead">Distribution du nombre de quote par speaker (genre justed un petit chiffre qui résume (moyenne vs medianne, qqch du genre)</p>
-            </div>
-        </div>
-
-
-        <h3></h3>
-
-        <hr class="mt-2 mb-3"/>
-
-        <h2 id=""></h2>
-
-        <div id="part3" class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Know thy speaker</h1>
-                <p class="lead">Learning more about our speakers so we have build personnas </p>
-            </div>
-        </div>
-
-
-
-
-        <hr class="mt-2 mb-3"/>
-
-        <h3>Demographics</h3>
-        <p>
-            We need to know more about our speakers in order to differentiate them on a larger scale, and perhaps spot some peculiar influence on the distribution of their position.
-            Thus, we've chosen to add the gender, age and political affiliation to each speaker. 
-            To do so, we've ran a couple hundred of thousands wikepedia searches on the speakers. 
-            Some of their pages were neatly completed, and their current political party were filled in as well as their birthdate.
-        </p>
-        <p>
-            Sadly, it was <strike>sometimes</strike>, well <strike>rarely</strike>, ... , <b>never</b> the case. 
-            Therefore, we've used some pretty minimalists heuristics to fill in each feature when we couldn't correctly recover the features.
-            For the political affiliation, we simply counted the occcurence of words like "socialist", or "right-wing" in each speakers page. 
-            Likewise, for the gender, we count the occurences of gendered pronoums. If we can't find enough of these pronoums, we use a classifer with the name of the speaker as input.
-            Although both of these heuristics are far from perfect, we've found it, most of the time, passed all the sanity checks.
-            Putting all of this together, we get the neat visualisation below.
-        </p>
-
-
-        <img src="static/demographics.png" ></img> 
-        #TODO Greta sur le violon, Arack Bobama, Sernie Banders, Tronald Drump et un random republicain 
-        <p>
-            Now there's a few things we can see here.   
-        </p>
-
-
-        <hr class="mt-2 mb-3"/>
-
-
-        <h3>Caser tout le monde dans le meme tiroir</h3>
-
-        <div style="display:flex">
-            <div class="card" style="width: 40%; float:left; flex:1;">
-                <img class="card-img-top" src="static/lorem.png" alt="oui">
-                <div class="card-body">
-                    <p class="card-text">clustering avec le word embeddings</p>
+            <div id="part1" class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">The Data</h1>
+                    <h2 class="lead mb-2 text-muted" >is dark and full of terrors</p>
                 </div>
             </div>
-            <div class="card" style="width: 60%; float:right; flex:1;">
-                <h4 class="card-title">Titre imposant qui en jette</h5>
-                <h5 class="card-subtitle mb-2 text-muted">Snarky comment pour montrer que l'on est cool</h6>
-                <div class="card-body">
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor odio vitae malesuada malesuada. Quisque porttitor vitae lacus non malesuada. Quisque in convallis augue. Proin in maximus sem, sed blandit tortor. Nam sed purus ac mauris volutpat rutrum vel vel libero. Quisque laoreet a massa id ultrices. Vestibulum ut consectetur enim. Praesent ac nisi sit amet quam scelerisque pulvinar id id erat. Ut tincidunt felis ac urna mollis efficitur. Cras auctor rhoncus orci et auctor. Curabitur mollis non velit at pulvinar. 
-                        <br>
-                        <br>
 
-                        Duis nec nunc in quam pellentesque bibendum. Donec nec ullamcorper orci. Cras tellus sapien, porttitor id neque vehicula, placerat rhoncus ante. Cras erat dui, aliquet non blandit non, aliquam non dolor. Aenean molestie volutpat velit, sit amet volutpat mi ultrices ac. Donec ac semper lorem. Quisque quis erat ut enim hendrerit porttitor ut et orci. 
-                    </p>
+
+            <div>Le pro-processing, l'envie de mourir, etc...</div>
+
+            <p>
+
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a euismod libero, at tincidunt massa. Fusce in varius nulla. Phasellus id mi in diam aliquam sodales. Nulla facilisi. Curabitur tincidunt neque ut mi luctus, at luctus elit consectetur. Donec at turpis a nisl dignissim luctus. Ut sit amet mauris ex. Maecenas a dolor dolor. Vivamus non gravida ipsum, eu accumsan sapien.
+                <br>
+
+                Donec a velit imperdiet, viverra nunc sit amet, finibus nunc. Cras tempus imperdiet tempor. Sed mattis mi tempus volutpat fringilla. Donec porta at diam a lobortis. In sit amet leo ex. Curabitur vitae faucibus lacus. Praesent sagittis nulla sit amet lacus ultrices sagittis. Praesent sit amet feugiat dui. Duis non efficitur dui. Pellentesque porttitor, nisi ut viverra mattis, ligula diam fermentum sapien, posuere viverra elit nunc id ex. Etiam vitae tortor vehicula, blandit ex eu, malesuada velit. Nullam vehicula quis dui eu eleifend. Nullam auctor dapibus est at suscipit. Nunc dictum bibendum justo, nec gravida purus congue sed.
+                <br>
+
+                Morbi non nisl orci. Praesent porttitor elit massa, vel ultrices est eleifend id. Etiam nec nulla leo. Quisque porttitor sed odio sit amet vehicula. Nullam nec turpis eget tellus mollis lacinia. Ut ac purus ipsum. Morbi consectetur ornare metus. Maecenas in dignissim ligula. Nunc commodo leo quam, non eleifend elit commodo non. Quisque non consectetur mi, ut gravida est. Sed in enim a elit lobortis bibendum. Ut tristique lorem quis quam ornare, non fringilla dolor eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent tristique tempor pharetra. In a ligula auctor, sollicitudin nibh at, vestibulum urna. In in sollicitudin ante, ac blandit felis.
+                <br>
+
+                Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum posuere metus eget lectus posuere lobortis. Nulla lacinia orci elit, ac auctor nulla pharetra venenatis. Donec viverra non est dictum fringilla. Sed eleifend maximus commodo. In id nibh mi. Curabitur molestie dui sit amet nisi venenatis, vitae rutrum justo suscipit. Cras vel velit non augue vehicula cursus. Nam molestie, nisi a euismod viverra, velit nibh feugiat ipsum, eget imperdiet eros magna sed nulla. Donec nec facilisis enim.
+                <br>
+
+                Vestibulum in lorem mauris. Aliquam erat volutpat. Integer sollicitudin accumsan arcu, vitae facilisis nulla imperdiet a. Donec sodales quam non dignissim efficitur. Maecenas at volutpat nunc, sit amet condimentum sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras non lorem in purus imperdiet bibendum. In lacus metus, aliquam ut est vitae, mollis maximus dolor. Proin eu leo malesuada, blandit ex ut, eleifend sem. Proin fringilla et tortor et suscipit. Nunc scelerisque pellentesque porttitor. Phasellus sed lectus metus. 
+
+
+            </p>
+
+
+            <hr class="mt-2 mb-3"/>
+
+
+            <div id="part2" class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">The race to influence : Giga bar charset</h1>
+                    <p class="lead">Distribution du nombre de quote par speaker (genre justed un petit chiffre qui résume (moyenne vs medianne, qqch du genre)</p>
                 </div>
             </div>
-        </div>
-        
+
+
+            <p>
+
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a euismod libero, at tincidunt massa. Fusce in varius nulla. Phasellus id mi in diam aliquam sodales. Nulla facilisi. Curabitur tincidunt neque ut mi luctus, at luctus elit consectetur. Donec at turpis a nisl dignissim luctus. Ut sit amet mauris ex. Maecenas a dolor dolor. Vivamus non gravida ipsum, eu accumsan sapien.
+                <br>
+
+                Donec a velit imperdiet, viverra nunc sit amet, finibus nunc. Cras tempus imperdiet tempor. Sed mattis mi tempus volutpat fringilla. Donec porta at diam a lobortis. In sit amet leo ex. Curabitur vitae faucibus lacus. Praesent sagittis nulla sit amet lacus ultrices sagittis. Praesent sit amet feugiat dui. Duis non efficitur dui. Pellentesque porttitor, nisi ut viverra mattis, ligula diam fermentum sapien, posuere viverra elit nunc id ex. Etiam vitae tortor vehicula, blandit ex eu, malesuada velit. Nullam vehicula quis dui eu eleifend. Nullam auctor dapibus est at suscipit. Nunc dictum bibendum justo, nec gravida purus congue sed.
+                <br>
+
+                Morbi non nisl orci. Praesent porttitor elit massa, vel ultrices est eleifend id. Etiam nec nulla leo. Quisque porttitor sed odio sit amet vehicula. Nullam nec turpis eget tellus mollis lacinia. Ut ac purus ipsum. Morbi consectetur ornare metus. Maecenas in dignissim ligula. Nunc commodo leo quam, non eleifend elit commodo non. Quisque non consectetur mi, ut gravida est. Sed in enim a elit lobortis bibendum. Ut tristique lorem quis quam ornare, non fringilla dolor eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent tristique tempor pharetra. In a ligula auctor, sollicitudin nibh at, vestibulum urna. In in sollicitudin ante, ac blandit felis.
+                <br>
+
+                Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum posuere metus eget lectus posuere lobortis. Nulla lacinia orci elit, ac auctor nulla pharetra venenatis. Donec viverra non est dictum fringilla. Sed eleifend maximus commodo. In id nibh mi. Curabitur molestie dui sit amet nisi venenatis, vitae rutrum justo suscipit. Cras vel velit non augue vehicula cursus. Nam molestie, nisi a euismod viverra, velit nibh feugiat ipsum, eget imperdiet eros magna sed nulla. Donec nec facilisis enim.
+                <br>
+
+                Vestibulum in lorem mauris. Aliquam erat volutpat. Integer sollicitudin accumsan arcu, vitae facilisis nulla imperdiet a. Donec sodales quam non dignissim efficitur. Maecenas at volutpat nunc, sit amet condimentum sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras non lorem in purus imperdiet bibendum. In lacus metus, aliquam ut est vitae, mollis maximus dolor. Proin eu leo malesuada, blandit ex ut, eleifend sem. Proin fringilla et tortor et suscipit. Nunc scelerisque pellentesque porttitor. Phasellus sed lectus metus. 
+
+
+            </p>
+
+
+            <h3></h3>
+
+            <hr class="mt-2 mb-3"/>
+
+            <h2 id=""></h2>
+
+            <div id="part3" class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Know thy speaker</h1>
+                    <p class="lead">Learning more about our speakers so we have build personnas </p>
+                </div>
+            </div>
+            <p>
+
+
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a euismod libero, at tincidunt massa. Fusce in varius nulla. Phasellus id mi in diam aliquam sodales. Nulla facilisi. Curabitur tincidunt neque ut mi luctus, at luctus elit consectetur. Donec at turpis a nisl dignissim luctus. Ut sit amet mauris ex. Maecenas a dolor dolor. Vivamus non gravida ipsum, eu accumsan sapien.
+                <br>
+
+                Donec a velit imperdiet, viverra nunc sit amet, finibus nunc. Cras tempus imperdiet tempor. Sed mattis mi tempus volutpat fringilla. Donec porta at diam a lobortis. In sit amet leo ex. Curabitur vitae faucibus lacus. Praesent sagittis nulla sit amet lacus ultrices sagittis. Praesent sit amet feugiat dui. Duis non efficitur dui. Pellentesque porttitor, nisi ut viverra mattis, ligula diam fermentum sapien, posuere viverra elit nunc id ex. Etiam vitae tortor vehicula, blandit ex eu, malesuada velit. Nullam vehicula quis dui eu eleifend. Nullam auctor dapibus est at suscipit. Nunc dictum bibendum justo, nec gravida purus congue sed.
+                <br>
+
+                Morbi non nisl orci. Praesent porttitor elit massa, vel ultrices est eleifend id. Etiam nec nulla leo. Quisque porttitor sed odio sit amet vehicula. Nullam nec turpis eget tellus mollis lacinia. Ut ac purus ipsum. Morbi consectetur ornare metus. Maecenas in dignissim ligula. Nunc commodo leo quam, non eleifend elit commodo non. Quisque non consectetur mi, ut gravida est. Sed in enim a elit lobortis bibendum. Ut tristique lorem quis quam ornare, non fringilla dolor eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent tristique tempor pharetra. In a ligula auctor, sollicitudin nibh at, vestibulum urna. In in sollicitudin ante, ac blandit felis.
+                <br>
+
+                Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum posuere metus eget lectus posuere lobortis. Nulla lacinia orci elit, ac auctor nulla pharetra venenatis. Donec viverra non est dictum fringilla. Sed eleifend maximus commodo. In id nibh mi. Curabitur molestie dui sit amet nisi venenatis, vitae rutrum justo suscipit. Cras vel velit non augue vehicula cursus. Nam molestie, nisi a euismod viverra, velit nibh feugiat ipsum, eget imperdiet eros magna sed nulla. Donec nec facilisis enim.
+                <br>
+
+                Vestibulum in lorem mauris. Aliquam erat volutpat. Integer sollicitudin accumsan arcu, vitae facilisis nulla imperdiet a. Donec sodales quam non dignissim efficitur. Maecenas at volutpat nunc, sit amet condimentum sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras non lorem in purus imperdiet bibendum. In lacus metus, aliquam ut est vitae, mollis maximus dolor. Proin eu leo malesuada, blandit ex ut, eleifend sem. Proin fringilla et tortor et suscipit. Nunc scelerisque pellentesque porttitor. Phasellus sed lectus metus. 
+
+
+            </p>
+
+
+
+            <hr class="mt-2 mb-3"/>
+
+            <h3>Demographics</h3>
+            <p>
+                We need to know more about our speakers in order to differentiate them on a larger scale, and perhaps spot some peculiar influence on the distribution of their position.
+                Thus, we've chosen to add the gender, age and political affiliation to each speaker. 
+                To do so, we've ran a couple hundred of thousands wikepedia searches on the speakers. 
+                Some of their pages were neatly completed, and their current political party were filled in as well as their birthdate.
+            </p>
+            <p>
+                Sadly, it was <strike>sometimes</strike>, well <strike>rarely</strike>, ... , <b>never</b> the case. 
+                Therefore, we've used some pretty minimalists heuristics to fill in each feature when we couldn't correctly recover the features.
+                For the political affiliation, we simply counted the occcurence of words like "socialist", or "right-wing" in each speakers page. 
+                Likewise, for the gender, we count the occurences of gendered pronoums. If we can't find enough of these pronoums, we use a classifer with the name of the speaker as input.
+                Although both of these heuristics are far from perfect, we've found it, most of the time, passed all the sanity checks.
+                Putting all of this together, we get the neat visualisation below.
+            </p>
+
+
+            <img src="static/demographics.png" ></img> 
+            #TODO Greta sur le violon, Arack Bobama, Sernie Banders, Tronald Drump et un random republicain 
+            <p>
+                Now there's a few things we can see here. 
+            </p>
+
+
+            <hr class="mt-2 mb-3"/>
+
+
+            <h3 id="part4">Caser tout le monde dans le meme tiroir</h3>
+
+            <div style="display:flex">
+                <div class="card" style="width: 40%; float:left; flex:1;">
+                    <img class="card-img-top" src="static/lorem.png" alt="oui">
+                    <div class="card-body">
+                        <p class="card-text">clustering avec le word embeddings</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 60%; float:right; flex:1;">
+                    <h4 class="card-title">Titre imposant qui en jette</h5>
+                    <h5 class="card-subtitle mb-2 text-muted">Snarky comment pour montrer que l'on est cool</h6>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor odio vitae malesuada malesuada. Quisque porttitor vitae lacus non malesuada. Quisque in convallis augue. Proin in maximus sem, sed blandit tortor. Nam sed purus ac mauris volutpat rutrum vel vel libero. Quisque laoreet a massa id ultrices. Vestibulum ut consectetur enim. Praesent ac nisi sit amet quam scelerisque pulvinar id id erat. Ut tincidunt felis ac urna mollis efficitur. Cras auctor rhoncus orci et auctor. Curabitur mollis non velit at pulvinar. 
+                            <br>
+                            <br>
+
+                            Duis nec nunc in quam pellentesque bibendum. Donec nec ullamcorper orci. Cras tellus sapien, porttitor id neque vehicula, placerat rhoncus ante. Cras erat dui, aliquet non blandit non, aliquam non dolor. Aenean molestie volutpat velit, sit amet volutpat mi ultrices ac. Donec ac semper lorem. Quisque quis erat ut enim hendrerit porttitor ut et orci. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
 
 
 
 
 
-        Etude verbeuse des personnas et statistiques (faire des describes de chaque ds)
+            Etude verbeuse des personnas et statistiques (faire des describes de chaque ds)
 
-        <hr class="mt-2 mb-3"/>
-
-
-        <h2 id="part2">Polarization</h2>
-
-        Clustering des personalités en K-means en aggrégeant les word embeddings par speaker. On peut rajouter des features si on a envie.
+            <hr class="mt-2 mb-3"/>
 
 
+            <h2 id="part2">Polarization</h2>
+
+            Clustering des personalités en K-means en aggrégeant les word embeddings par speaker. On peut rajouter des features si on a envie.
 
 
+
+
+
+
+            <script src="static/utils.js"></script> 
+            <script>
+                window.onscroll = function() {updateProgress()};
+
+             
+            </script>
 
     </body>
+
 </html>
