@@ -1,7 +1,6 @@
 *.model
 *.json
 *.bz2
-*.png
 env
 *.GIF
 *.npy
