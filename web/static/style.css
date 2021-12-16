@@ -9,3 +9,6 @@
 img{
     max-width: 100%;
 }
+.progress-bar{
+    height: .5rem;
+}

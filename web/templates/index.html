@@ -28,7 +28,7 @@
                             <a class ="nav-link active" href="#" onClick="document.getElementById('part1').scrollIntoView();return false;">Part 1</a>
                         </li>
                         <li class="nav-item">
-                        <a class ="nav-link active" href="#" onClick="document.getElementById('part2').scrollIntoView(); return false;">Part 2</a>
+                        <a class ="nav-link active" href="#" onClick="document.getElementById('part2').scrollIntoView();return false;">Part 2</a>
                         </li> 
                         <li class="nav-item">
                             <a class ="nav-link active" href="#" onClick="document.getElementById('part3').scrollIntoView();return false;">Part 3</a>
@@ -140,7 +140,7 @@
             <div id="part3" class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h1 class="display-4">Know thy speaker</h1>
-                    <p class="lead">Learning more about our speakers so we have build personnas </p>
+                    <p class="lead">Learning more about our speakers so we can build personnas </p>
                 </div>
             </div>
             <p>
@@ -233,9 +233,12 @@
             Clustering des personalités en K-means en aggrégeant les word embeddings par speaker. On peut rajouter des features si on a envie.
 
 
+            <h2>BONUS</h2>
 
-
-
+            <form method="POST">
+                <input name="prompt">
+                <input type="submit">
+            </form>
 
             <script src="static/utils.js"></script> 
             <script>

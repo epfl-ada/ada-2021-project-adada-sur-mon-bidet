@@ -1,23 +1,18 @@
-import bz2
-import json
+
 import pandas as pd
 import numpy as np
 import nltk
 from nltk.corpus import stopwords
 import re
-import scipy.stats as stats
-import scipy
 from astropy.stats import bootstrap
 from functools import reduce
-from gensim.models import Word2Vec, KeyedVectors
+from gensim.models import KeyedVectors
 from mpl_toolkits.mplot3d import Axes3D
 from sklearn import decomposition
 import matplotlib.pyplot as plt
 import os
 from PIL import Image
-from importlib import reload
 from matplotlib import cm
-import itertools
 from time import time
 import threading
 from multiprocessing import Process, Array
@@ -40,13 +35,6 @@ __MODEL_FILE = "vectors.txt"
 #par_context = Context()
 par_context = None
 
-
-### setup and collab tools
-# Clone the entire repo.
-def git_pull():
-  token = input("git token")
-  os.system("git pull " + token)
-  del token 
 
 
 
@@ -79,20 +67,7 @@ def CIs(data, columns, funcs, interval=(2.5, 97.5)):
     CI_df.index = index
     return CI_df
 
-"""
-def get_samples(filename=__path_to_file, num_samples=__SAMPLE_SIZE, random=False):
-    dict = {}
-    index = range(num_samples)
-    if(random):
-        index = np.random.randint(0, high=50_000, size=num_samples)
 
-    
-    with bz2.open(filename, 'rb') as s_file:
-        for i, instance in zip(range(max(index)), s_file):
-            if(i in index):
-                dict[i] = eval(json.dumps(json.loads(instance)))
-    return pd.DataFrame.from_dict(dict, orient="index")
-"""
 
 def __compose (*functions):
     """
@@ -537,6 +512,17 @@ def show_quote_in_set(vec_space, dimensions, colors, quote_point, show=True):
     plt.show()
 
     fig.savefig("W2V_quote.png", dpi=300)
+
+    
+        
+    
+    
+        
+    
+    
+    
+    
+
 
     
     
