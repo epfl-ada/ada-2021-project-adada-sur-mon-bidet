@@ -508,10 +508,8 @@ def show_quote_in_set(vec_space, dimensions, colors, quote_point, show=True):
     plt.scatter(X_proj[:, 0],X_proj[:, 1], color=colors, edgecolor='k')
     
     ax.plot(quote_point[0], quote_point[1], markerfacecolor="green", marker="o", markersize="20")
-    ax.annotate(str("you"), (quote_point[0], quote_point[1]), fontsize=20, color="yellow")
-    plt.show()
-
-    fig.savefig("W2V_quote.png", dpi=300)
+    ax.annotate(str("you are here!"), (quote_point[0], quote_point[1]), fontsize=20, color="yellow")
+    fig.savefig("web/static/W2V_quote.png", dpi=300)
 
     
         

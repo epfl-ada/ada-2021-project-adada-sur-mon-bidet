@@ -8,11 +8,12 @@ import helpers
 import numpy as np
 import pandas as pd
 from time import time
-
+importlib.reload(helpers)
+import helpers
 
 app = Flask(__name__)
-#model = helpers.get_model("web/static/W2V.model")
-#data = pd.read_pickle("static/reduced_bonus.pkl")
+model = helpers.get_model("web/static/W2V.model")
+data = pd.read_pickle("web/static/reduced_bonus.pkl")
 print("path >",app.instance_path)
 @app.route("/", methods=["GET","POST"])
 def index():
@@ -21,8 +22,9 @@ def index():
 
 
     prompt = request.form["prompt"]
-
-    return render_template("index.html",original=prompt, found = get_similar_quote(prompt, model) )
+    found =  get_similar_quote(prompt, model)
+    print("Found quote : ", found)
+    return render_template("index.html",original=prompt, found = found)
 
 
 @app.route("/bonus", methods=["GET","POST"])
