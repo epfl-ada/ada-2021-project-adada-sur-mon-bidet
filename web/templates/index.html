@@ -71,7 +71,7 @@
             <div id="part1" class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h1 class="display-4">The Data</h1>
-                    <h2 class="lead mb-2 text-muted" >is dark and full of terrors</p>
+                    <h2 class="lead mb-2 text-muted" >Is dark and full of terrors</p>
                 </div>
             </div>
 
@@ -220,6 +220,7 @@
             
 
 
+            <hr class="mt-2 mb-3"/>
 
 
 
@@ -230,15 +231,272 @@
 
             <h2 id="part2">Polarization</h2>
 
-            Clustering des personalités en K-means en aggrégeant les word embeddings par speaker. On peut rajouter des features si on a envie.
+            <div id="part2" class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">How do we speak about climate ? The fine details of its narrative in the news</h1>
+                    <p class="lead">The fine details of its narrative in the news</p>
+                </div>
+            </div>
 
 
+           <h3 class="mb-2 text-muted">What is polarization ?</h3>
+            
+            Let us define polarization.
+            <br>
+
+            <i>Polarization: a state in which the opinions, beliefs, or interests of a group or society no longer range along a continuum but become concentrated at opposing extremes.</i>
+            <br>
+            In our case, we will try to measure the polarization of these different quotes by sentiment analysis i.e. polarity of sentiment.
+            
+            
+            <h3 class="mb-2 text-muted"> Evaluating polarization</h3>
+            
+            Given a sentence, we use VADER (Valence Aware Dictionary and sEntiment Reasoner) to compute the polarity score.
+            <br>
+            Valence, or hedonic tone, is the affective quality referring to the intrinsic attractiveness/"good"-ness (positive valence) or averseness/"bad"-ness (negative valence) of an object, in our case, text. The term also characterizes and categorizes specific emotions. For example, emotions popularly referred to as "negative", such as anger and fear, have negative valence. Joy has positive valence.
+            <br>
+            Thus, our polarity score score is computed by summing the valence scores of each word in the quotation, adjusted according to the rules, and then normalized to be between -1 (most extreme negative) and +1 (most extreme positive).
+
+            
+            <h3 class="mb-2 text-muted"> Evolution of polarization</h3>
+            
+            Given this polarity score assigned to each quotation, we can now study its behaviour under multiple point of views (time, age, gender, political party) and look at if certain topics arise as more dividing than others.
+            
+            
+
+            <div style="display:flex">
+                <div class="card" style="width: 40%; float:left; flex:1;">
+                    <div class="card-body">
+                        <img class="card-img-top" src="static/total_polarity_distribution.png" alt="total polarity distribution">
+                    </div>
+                </div>
+                <div class="card text-card" style="float:right;">
+                    <div class="card-body">
+                        <div class="vertical-center">
+
+                            <h4 class="card-title mt-3 ms-3">Polarity score distribution throughout all quotations</h5>
+                            <h5 class="card-subtitle mb-2 ms-3 text-muted">Snarky comment pour montrer que l'on est cool</h6>
+                            <p class="card-text ms-3">
+                                Let us first look at the distribution of polarity score throughout 2015 to 2020.
+                                <br>
+                                As we can see (warning, log scale !), a majority of the quotations are considered neutral (score of 0.0).
+                                The mean polarity score in our corpus is 0.27 with a standard deviation of 0.49. 
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:flex">
+                <div class="card text-card" style="float:left;">
+
+                    <div class="card-body">
+                        <div class="vertical-center">
+                            <h4 class="card-title mt-3 ms-3">Polarity score for each year</h5>
+                            <h5 class="card-subtitle mb-2 ms-3 text-muted">Snarky comment pour montrer que l'on est cool</h6>
+                            <p class="card-text ms-3">
+                                Let us look at the distribution of each year to see if there's any year that stands out.
+                                <br>
+                                As we can see, polarity seems to be very constant throughout the years. Similarly, we looked throughout the months and didn't find anything significant.
+                
+                                Maybe, all we need is finer granularity ! Let's look at the daily average polarity score throughout the years.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="width: 40%; float:right; flex:1;">
+                    <div class="card-body">
+
+                        <img class="card-img-top" src="static/boxplot_year.png" alt="total polarity distribution">
+                    </div>
+
+                </div>
+            </div>
+            
+            <div style="display:flex">
+                <div class="card" style="width: 40%; float:left; flex:1;">
+                    <div class="card-body">
+                        <img class="card-img-top" src="static/average_daily_polarity.png" alt="total polarity distribution">
+                    </div>
+                </div>
+                <div class="card text-card" style="width: 60%; float:right; flex:1;">
+                    <div class="card-body">
+                        <div class="vertical-center">
+
+                            <h4 class="card-title mt-3 ms-3">Average polarity score throughout the years</h5>
+                            <h5 class="card-subtitle mb-2 ms-3 text-muted">Snarky comment pour montrer que l'on est cool</h6>
+                            <p class="card-text">
+                                Looking at the 2016 period, we might think that we have caught onto a particularly polarized period in the news! Who knows what very polarizing event happened during 2016 in the USA ? 
+                                <br>
+                                But looking closely, it's a matter of having much less data during 2016 which makes the mean very sensitive to outliers. Tough luck....
+                                <br>
+                                Therefore, as we can see, the average daily sentimental polarity of the quotation on climate change throughout the years is quite stable at around 0.27! Thus, the narrative around climate change seems to be slightly positive.
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            
+            
+          
+            <hr class="mt-2 mb-3"/>
+            
+            <h2 class="mb-2"> Examining the different topics of climate change </h3>
+
+            After seeing that there was no noticeable evolution of the polarization of the narrative around climate change in a global scale, we decided to dig a little further and examine the narrative around specific topics.
+            <br>
+            <h3 class="mt-3 mb-2 text-muted">Polemic topics</h3>
+
+            Polemic topics and polarization go hand in hand, therefore, a good first step would be to be able to classify a topic as controversial or not.
+            <br>
+
+            Looking at the definition of <b>controversy</b> from Werriam-Webster, we see: <i>"a discussion marked especially by the expression of opposing views".</i>
+            <br>
+
+            Thus, a topic whose daily polarity score is very stable throughout time would not be considered controversial, as around the same level of sentimental polarity is expressed each day (e.g. we need to breathe to live). 
+            Whereas a topic where the daily polarity score tends to swing between -1 and 1, can be considered as a topic where there is expression of opposing views (e.g. anything about Trump).
+            <br>
+
+            Therefore, examining the empirical variance of the daily average polarity score of a given topic seems like a reasonable heuristic.
+            <br>
+            
+            This heuristic obviously assumes that there aren't consistently opposing views that cancel each other exactly the same day. This assumption tends to be hold, when looking at the data and its quantity.
+            <br>
+            
+            Using our heuristic, we extracted the top 4 most (non)polemic topics.
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Rankings</th>
+                        <th>Most polemic topics</th>
+                        <th>Most non-polemic topics</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1</td>
+                        <td>Wildfires</td>
+                        <td>Earth</td>
+                    </tr>                
+                    <tr>
+                        <td>#2</td>
+                        <td>Deforestation</td>
+                        <td>Climate</td>
+                    </tr>                
+                    <tr>
+                        <td>#3</td>
+                        <td>Ecosystem</td>
+                        <td>Gas</td>
+                    </tr>                
+                    <tr>
+                        <td>#4</td>
+                        <td>Ozone</td>
+                        <td>Sustainability</td>
+                    </tr>
+                </tbody>
+
+            </table>
+            
+            <h4 class="mt-5 mb-3 text-muted">Let's take a look at the polarities of these topics throughout the years.</h4>
+
+            <div style="display:flex">
+                <div class="card" style="width: 35%; float:left; flex:1;">
+                    <img class="card-image-top" src="static/not_polemic_distributions.png" alt="Distribution of non polemic topics"></img>
+                </div>
+
+                <div style="width:30%; background-color: #f5f5f5;">
+                    <div style="position:relative;">
+                        <p class="vertical-center" style="margin-top: 40%; padding:18px">
+                            As we can see, non controversial topics have their distribution concentrated around a single polarity score which is positive for these 4 topics. 
+                            <br>
+                            Whereas, the distributions for the controversial are spread over the entire x axis which indicates a variety of opinions and a high likelihood of polarization. It is not the typical bimodal which represents the theorical polarized distribution but it is still quite different from the non-polemic topics. 
+                        </p>
+                    </div>    
+                </div>
+
+                <div class="card" style="width: 35%; float:left; flex:1;">
+                    <img class="card-image-top" src="static/polemic_distributions.png" alt="Distribution of non polemic topics"></img>
+                </div>
+            </div> 
+            
+
+            <br>
+
+            <h4 class="mt-5 mb-3 text-muted">
+                Looking a little more closely at the topic of "Wildfires" and "Earth", we can see how differently the narrative evolves through time.
+            </h4>
+
+            
+            <div style="display:flex">
+                <div class="card" style="width: 35%; float:left; flex:1;">
+                    <img class="card-image-top" src="static/earth_polarity.png" alt="Distribution of non polemic topics"></img>
+
+                </div>
+                <div style="width:30%;background-color: #f5f5f5;">
+                    <div style="position:relative;">
+                        <p class="vertical-center" style="margin-top: 25%; padding:18px">
+                            We can observe here that the topic of wildfires tends to exert much more extreme reactions than the "earth" topic. 
+                            This is somewhat expected as wildfires are natural disasters that destroy forests and homes, thus creating emotional reactions.
+                        </p>
+                    </div>    
+                </div>
+
+                <div class="card" style="width: 35%; float:left; flex:1;">
+                    <img class="card-image-top" src="static/wildfires_polarity.png" alt="Distribution of non polemic topics"></img>
+                </div>
+            </div> 
+            
+            
+            
+            <hr class="mt-2 mb-3"/>
+
+            <h3 class="mb-2 text-muted"> Examples of quotes</h3>
+            
+            To make things a little more fun and tangible, let us look at some quotes to get a better feeling of the narrative.
+            <br>
+
+            An example of a very negative quote around these polemic topics is: 
+            <br>
+
+            "<i>Where a complaint alleges, knowing governmental action is affirmatively and substantially <b>damaging the climate system</b> in a way that will cause <b>human deaths</b>, shorten human lifespans, result in widespread damage to property, threaten human food sources and  <b>dramatically alter the planet's ecosystem </b>, it states a claim for a due process violation to hold. Otherwise, it would be to say that the constitution affords no protection against a <b>government's knowing decision to poison the air</b> its citizens breathe or the water its citizens drink.</i>"
+            <b class="text-muted">Ann Aiken</b>, USA Oregon District judge.
+            <br>
+            <br>
+
+            An example of a very positive quote is: 
+            <br>
+
+            "<i>While the agenda on climate change looks precarious with president elect Trump's picks of climate change skeptics and denialists. Latin america is heading in the opposite direction. In 2017, we expect to increasingly hear actors in the private sector, banks and civil society making the case for why <b>action on climate change</b> is needed for <b>sustainable development</b>. Countries from the region strongly back the Paris climate agreement and in November many announced plans to <b>reduce emissions</b> and promote <b>renewable energy</b> during the UN climate change conference in Marrakech.[...]</i>" 
+            <b class="text-muted">Guy Edwards</b>, consultant focusing on climate change, geopolitics and Latin America.
+            <br>
+            <br>
+
+            <h3 class="mb-2 text-muted"> Is the narrative polarized ?</h3>
+            When starting to work on the polarization of the narrative around climate change, we expected to see an opposition between a climate change skeptic narrative and a climate change alarmistic narrative. But, our findings don't back up our expectations.
+            
+            Instead, as we can see from those two quotes, and it generalizes well to the rest of the corpus, quotes considered opposite by our sentimental polarity score tend to share a similar feeling: <b>Climate change is important and we need to act about it</b>. Indeed, the narrative around climate change can either be alarmistic about the current situation or hopeful and positive about the actions taken.
+            
+            <br>
+
+            Thus, either, the climate change skeptic narrative is actually much smaller than we think and is a case of a loud minority, or tools such as sentimental polarity and word embeddings are not the right tools to dissociate the two narratives.
+            
+            
+            <hr class="mt-2 mb-3"/>
+
+            
+            
+            
             <h2>BONUS</h2>
-
+    
             <form method="POST">
                 <input name="prompt">
                 <input type="submit">
             </form>
+        </div>  
+
 
             <script src="static/utils.js"></script> 
             <script>
