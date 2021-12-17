@@ -25,19 +25,22 @@
                 <div class ="container-fluid">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class ="nav-link active" href="#" onClick="document.getElementById('part1').scrollIntoView();return false;">Part 1</a>
+                            <a class ="nav-link active" href="#" onClick="scrollToPart('part1'); return false;">Abstract</a>
                         </li>
                         <li class="nav-item">
-                        <a class ="nav-link active" href="#" onClick="document.getElementById('part2').scrollIntoView();return false;">Part 2</a>
+                        <a class ="nav-link active" href="#" onClick="scrollToPart('part2'); return false;">The Data</a>
                         </li> 
                         <li class="nav-item">
-                            <a class ="nav-link active" href="#" onClick="document.getElementById('part3').scrollIntoView();return false;">Demographics</a>
+                            <a class ="nav-link active" href="#" onClick="scrollToPart('part3'); return false;">Demographics</a>
                         </li> 
                         <li class="nav-item">
-                            <a class ="nav-link active" href="#" onClick="document.getElementById('part4').scrollIntoView();return false;">Polarization</a>
+                            <a class ="nav-link active" href="#" onClick="scrollToPart('part4'); return false;">Rhethorics</a>
                         </li> 
                         <li class="nav-item">
-                            <a class ="nav-link active"href="#" onClick="document.getElementById('bonus').scrollIntoView();return false;">Bonus</a>
+                            <a class ="nav-link active" href="#" onClick="scrollToPart('part4'); return false;">Clustering</a>
+                        </li> 
+                        <li class="nav-item">
+                            <a class ="nav-link active"href="#" onClick="scrollToPart('bonus'); return false;">Bonus</a>
                         </li>   
                     </ul> 
                     <span class="navbar-text">
@@ -51,15 +54,17 @@
             </div>
         </div>  
         <div class="datastory">
-
-            <h1 id="home">ADADA sur mon bidet</h1>
+            <div class="justified">
+                <h1 id="part1">Polarization around climate change 
+                </h1>
+                <h2 class="text-muted mb-3">
+                    Is it growing as fast as the polar circle is shrinking? 
+                </h2>
+            </div>
 
             <div>
-                <p>
-                    Jeune introduction du dawa, ou l'on hype tout le monde sur ce qu'il va se passer.
-                </p>
-                <p>
-                    Contextualisation du problème
+                <p class="justified">
+                    As the effects of climate change become increasingly visible in our daily life, it is time for humanity to come together for a joint effort to come back to an equilibrium with nature. A joint effort requires collaboration and agreement on what climate change is and what we should do. In this data story, we will study the polarization of opinions around climate change that tend to make this collaboration difficult to accomplish and examine its dynamics. This will be done through the lens of Quotebank, an open corpus of 178 million quotations attributed to the speakers who uttered them, extracted from 162 million English news articles published between 2008 and 2020.
                 </p>
 
             </div>
@@ -69,69 +74,75 @@
 
             <!--#SECTION Paul : Pre-processing -->
 
-            <div id="part1" class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-4">The Data</h1>
-                    <h2 class="lead mb-2 text-muted" >Is dark and full of terrors</h2>
-                </div>
-            </div>
-
-            <div>Le pro-processing, l'envie de mourir, etc...</div>
-
-            <p>
-
-
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a euismod libero, at tincidunt massa. Fusce in varius nulla. Phasellus id mi in diam aliquam sodales. Nulla facilisi. Curabitur tincidunt neque ut mi luctus, at luctus elit consectetur. Donec at turpis a nisl dignissim luctus. Ut sit amet mauris ex. Maecenas a dolor dolor. Vivamus non gravida ipsum, eu accumsan sapien.
-                <br>
-
-                Donec a velit imperdiet, viverra nunc sit amet, finibus nunc. Cras tempus imperdiet tempor. Sed mattis mi tempus volutpat fringilla. Donec porta at diam a lobortis. In sit amet leo ex. Curabitur vitae faucibus lacus. Praesent sagittis nulla sit amet lacus ultrices sagittis. Praesent sit amet feugiat dui. Duis non efficitur dui. Pellentesque porttitor, nisi ut viverra mattis, ligula diam fermentum sapien, posuere viverra elit nunc id ex. Etiam vitae tortor vehicula, blandit ex eu, malesuada velit. Nullam vehicula quis dui eu eleifend. Nullam auctor dapibus est at suscipit. Nunc dictum bibendum justo, nec gravida purus congue sed.
-                <br>
-
-                Morbi non nisl orci. Praesent porttitor elit massa, vel ultrices est eleifend id. Etiam nec nulla leo. Quisque porttitor sed odio sit amet vehicula. Nullam nec turpis eget tellus mollis lacinia. Ut ac purus ipsum. Morbi consectetur ornare metus. Maecenas in dignissim ligula. Nunc commodo leo quam, non eleifend elit commodo non. Quisque non consectetur mi, ut gravida est. Sed in enim a elit lobortis bibendum. Ut tristique lorem quis quam ornare, non fringilla dolor eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent tristique tempor pharetra. In a ligula auctor, sollicitudin nibh at, vestibulum urna. In in sollicitudin ante, ac blandit felis.
-                <br>
-
-                Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum posuere metus eget lectus posuere lobortis. Nulla lacinia orci elit, ac auctor nulla pharetra venenatis. Donec viverra non est dictum fringilla. Sed eleifend maximus commodo. In id nibh mi. Curabitur molestie dui sit amet nisi venenatis, vitae rutrum justo suscipit. Cras vel velit non augue vehicula cursus. Nam molestie, nisi a euismod viverra, velit nibh feugiat ipsum, eget imperdiet eros magna sed nulla. Donec nec facilisis enim.
-                <br>
-
-                Vestibulum in lorem mauris. Aliquam erat volutpat. Integer sollicitudin accumsan arcu, vitae facilisis nulla imperdiet a. Donec sodales quam non dignissim efficitur. Maecenas at volutpat nunc, sit amet condimentum sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras non lorem in purus imperdiet bibendum. In lacus metus, aliquam ut est vitae, mollis maximus dolor. Proin eu leo malesuada, blandit ex ut, eleifend sem. Proin fringilla et tortor et suscipit. Nunc scelerisque pellentesque porttitor. Phasellus sed lectus metus. 
-
-
-            </p>
-
-
-            <hr class="mt-2 mb-3"/>
-
-
             <div id="part2" class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1 class="display-4">The race to influence : Giga bar charset</h1>
-                    <h2 class="lead mb-2 text-muted" >Distribution du nombre de quote par speaker (genre justed un petit chiffre qui résume (moyenne vs medianne, qqch du genre)</h2>
+                    <h2 class="display-4">The Data</h2>
                 </div>
+                <h2 class="lead mb-2 text-muted" >From Quotebank to quotes about climate</h2>
             </div>
 
-
-            <p>
-
-
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a euismod libero, at tincidunt massa. Fusce in varius nulla. Phasellus id mi in diam aliquam sodales. Nulla facilisi. Curabitur tincidunt neque ut mi luctus, at luctus elit consectetur. Donec at turpis a nisl dignissim luctus. Ut sit amet mauris ex. Maecenas a dolor dolor. Vivamus non gravida ipsum, eu accumsan sapien.
+            <p class="justified">
+                What are we working with? Quotes, about climate.    
                 <br>
-
-                Donec a velit imperdiet, viverra nunc sit amet, finibus nunc. Cras tempus imperdiet tempor. Sed mattis mi tempus volutpat fringilla. Donec porta at diam a lobortis. In sit amet leo ex. Curabitur vitae faucibus lacus. Praesent sagittis nulla sit amet lacus ultrices sagittis. Praesent sit amet feugiat dui. Duis non efficitur dui. Pellentesque porttitor, nisi ut viverra mattis, ligula diam fermentum sapien, posuere viverra elit nunc id ex. Etiam vitae tortor vehicula, blandit ex eu, malesuada velit. Nullam vehicula quis dui eu eleifend. Nullam auctor dapibus est at suscipit. Nunc dictum bibendum justo, nec gravida purus congue sed.
+                Weeeell actually to be precise it's quotes that contain a word from vocabulary that revolves around climate issues, for example "energy" or "typhoon" or "agriculture". But "The Rolling Stones play with such energy" does not talk about climate at all right? This is a false positive (FP): naïvely looks like a climate quote, but really isn't. There will always be some FP, but too much is a problem as it would discrit any further result. We some strict filtering to reduce our rate of FPs, at the cost of loosing true positives of course. This still seemed like the right way to go. Notable trouble makers where "energy" or "atmosphere", that oftentimes are used in an abstract way.
+                <br>    
                 <br>
-
-                Morbi non nisl orci. Praesent porttitor elit massa, vel ultrices est eleifend id. Etiam nec nulla leo. Quisque porttitor sed odio sit amet vehicula. Nullam nec turpis eget tellus mollis lacinia. Ut ac purus ipsum. Morbi consectetur ornare metus. Maecenas in dignissim ligula. Nunc commodo leo quam, non eleifend elit commodo non. Quisque non consectetur mi, ut gravida est. Sed in enim a elit lobortis bibendum. Ut tristique lorem quis quam ornare, non fringilla dolor eleifend. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent tristique tempor pharetra. In a ligula auctor, sollicitudin nibh at, vestibulum urna. In in sollicitudin ante, ac blandit felis.
+                In addition of the quotes, we also have the speaker's name, the date they said or wrote the quote, and the number of times this quote has been in a quotebank article.
                 <br>
-
-                Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum posuere metus eget lectus posuere lobortis. Nulla lacinia orci elit, ac auctor nulla pharetra venenatis. Donec viverra non est dictum fringilla. Sed eleifend maximus commodo. In id nibh mi. Curabitur molestie dui sit amet nisi venenatis, vitae rutrum justo suscipit. Cras vel velit non augue vehicula cursus. Nam molestie, nisi a euismod viverra, velit nibh feugiat ipsum, eget imperdiet eros magna sed nulla. Donec nec facilisis enim.
                 <br>
-
-                Vestibulum in lorem mauris. Aliquam erat volutpat. Integer sollicitudin accumsan arcu, vitae facilisis nulla imperdiet a. Donec sodales quam non dignissim efficitur. Maecenas at volutpat nunc, sit amet condimentum sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras non lorem in purus imperdiet bibendum. In lacus metus, aliquam ut est vitae, mollis maximus dolor. Proin eu leo malesuada, blandit ex ut, eleifend sem. Proin fringilla et tortor et suscipit. Nunc scelerisque pellentesque porttitor. Phasellus sed lectus metus. 
-
-
+                We end up with XXX quotes from XXX different speakers, quoted between 2015 and 2020. The most viral of which is unfortunately a FP although it contains both "environment" and "climate" : YYYY
             </p>
 
 
-            <h3></h3>
+
+            <div style="display:flex">
+                <div class="card" style="width: 40%; float:left; flex:1;">
+                    <img class="card-img-top" src="static/lorem.png" alt="gif">
+                    <div class="card-body">
+                    </div>
+                </div>
+                <div class="card" style="width: 60%; float:right; flex:1;">
+                    <div class="card-body">
+                        <div class="vertical-center">
+
+                            <h4 class="card-title mt-3 ms-3">Climate quote influence podium</h4>
+                            <h5 class="card-subtitle mb-2 ms-3 text-muted">Snarky</h5>
+                            <p class="card-text">
+                                Have you ever wondered who are the most influencial ecologists? Do news articles prefer to quote scientists? Politicians? Greta Thunberg? Who says the most viral punchlines?
+                                We did!
+                                <br><br>
+                                Who doesn't like a good old podium? Even better, a dynamic and continous podium. A podium of the most influencial speakers. To measure "influence", we use the number of times a speaker has been quoted in times, all climate quotes considered.
+                                <br><br>
+                                And our best contenders are:
+
+                            </p>
+                        </div>
+
+                    </div>             
+                </div>
+            </div>
+
+            <div style="display:flex">
+                <div class="card" style="width: 60%; float:right; flex:1;">
+                    <div class="card-body">
+                        <div class="vertical-center">
+                            
+                            <h4 class="card-title mt-3 ms-3">Virality dependence of influence </h4>
+                            <h5 class="card-subtitle mb-2 ms-3 text-muted">Turns out, it's not TikTok</h5>
+                            <p class="card-text">
+                                If you want to be on the podium, it looks like having a few viral quotes is not enough to do the trick. The following graph shows that for our most quoted speakers, even their most famous quote is rather unnimpressive. In the meantime, many of the punchliners -that's how we'll name speakers with very famous quotes- are aren't quoted a whole lot when cumulated. This is seen by the proximity of our point to the 1:1 line.
+                            </p>
+                        </div>
+                        
+                    </div>             
+                </div>
+                <div class="card" style="width: 40%; float:left; flex:1;">
+                    <img class="card-img-top" src="static/lorem.png" alt="virality and influence">
+                    <div class="card-body">
+                    </div>
+                </div>
+            </div>
+
 
             <hr class="mt-2 mb-3"/>
 
@@ -174,48 +185,43 @@
                 <br>
             </p>
             </p>
-                Depressingly as expected, women are completely underrepresented, 
-                a staggering 22.6% of Republicans are female (opposed to the 50.5% statistics from the census). 
-                Things are better with the Democrats (32.2%), although still completely way below the 50% mark.
-                <br>
-                Women speakers are on average younger than their male counterparts (59.6 years old for the Democrats and 58.3 years old for the Republicans). 
-            
-
-                Most of the speakers classified with "other" gender, are for the most part misclassifications in our algorithms (due to foreign or androgynous names and lack of information on Wikipedia) and thus should not be interpreted in anyways.
-            </p>
+               
+                          </p>
 
             <hr class="mt-2 mb-3"/>
 
 
-            <h3 id="part4">Caser tout le monde dans le meme tiroir</h3>
-
+            
             <div style="display:flex">
                 <div class="card" style="width: 40%; float:left; flex:1;">
-                    <img class="card-img-top" src="static/lorem.png" alt="oui">
+                    <img class="card-img-top" src="static/demographics_splitted.png" alt="demographics_splitted">
                     <div class="card-body">
-                        <p class="card-text">clustering avec le word embeddings</p>
                     </div>
                 </div>
                 <div class="card" style="width: 60%; float:right; flex:1;">
-                    <h4 class="card-title">Titre imposant qui en jette</h5>
-                    <h5 class="card-subtitle mb-2 text-muted">Snarky comment pour montrer que l'on est cool</h6>
                     <div class="card-body">
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor odio vitae malesuada malesuada. Quisque porttitor vitae lacus non malesuada. Quisque in convallis augue. Proin in maximus sem, sed blandit tortor. Nam sed purus ac mauris volutpat rutrum vel vel libero. Quisque laoreet a massa id ultrices. Vestibulum ut consectetur enim. Praesent ac nisi sit amet quam scelerisque pulvinar id id erat. Ut tincidunt felis ac urna mollis efficitur. Cras auctor rhoncus orci et auctor. Curabitur mollis non velit at pulvinar. 
-                            <br>
-                            <br>
+                        <div class="vertical-center">
 
-                            Duis nec nunc in quam pellentesque bibendum. Donec nec ullamcorper orci. Cras tellus sapien, porttitor id neque vehicula, placerat rhoncus ante. Cras erat dui, aliquet non blandit non, aliquam non dolor. Aenean molestie volutpat velit, sit amet volutpat mi ultrices ac. Donec ac semper lorem. Quisque quis erat ut enim hendrerit porttitor ut et orci. 
-                        </p>
-                    </div>
+                            <h4 class="card-title mt-3 ms-3">Looking closer at the gender distribution </h4>
+                            <h5 class="card-subtitle mb-2 ms-3 text-muted">We wouldn't miss a chance to rant about it</h5>
+                            <p class="card-text">
+                                Depressingly as expected, women are completely underrepresented, 
+                                a staggering 22.6% of Republicans are female (opposed to the 50.5% statistics from the census). 
+                                Things are better with the Democrats (32.2%), although still completely way below the 50% mark.           
+                                <br>
+                                Women speakers are on average younger than their male counterparts (59.6 years old for the Democrats and 58.3 years old for the Republicans). 
+                                <br>
+                                Most of the speakers classified with "other" gender, are for the most part misclassifications in our algorithms (due to foreign or androgynous names and lack of information on Wikipedia) and thus should not be interpreted in anyways.
+                            </p>
+                        </div>
+
+                    </div>             
                 </div>
             </div>
             
-
-
+            
+            
             <hr class="mt-2 mb-3"/>
-
-
 
             Etude verbeuse des personnas et statistiques (faire des describes de chaque ds)
 
@@ -597,8 +603,6 @@
                 </div>
             </div>
             {% endif %}
-
-            <!-- TODO INSERT PHOTO OF EXAMPLE AND TELL TO GO ON A SPECIAL NOTEBOOK -->
             
             <hr class="mt-4 mb-3"/>
 
@@ -715,9 +719,39 @@
 
             <hr class="mt-2 mb-3"/>
 
+            <div id="part5" class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Building personnas</h1>
+                    <h2 class="lead mb-2 text-muted" >As if there weren't enough prejudice in the dataset</h2>
+                </div>
+            </div>
+            <p class="justified">
+                Now that we have various ways to identify our speakers, and how each of them speak, we can look for similarities and disparities between speakers, and how we can explain them. (TODO maybe redondant avec des parties du dessus l'intro de cette partie). 
+                Humans like to categorize, and we are humans, so let's go. We can cluster our speakers based on their speach-print, their word embeddings. Using KMeans, word embeddings of speakers cluster in the following way. 
+            </p>
+            <div style="display:flex">
 
-    
-    
+                <div class="card" style="width: 40%; float:left; flex:1;">
+                    <div class="card-body">
+                        <img class="card-img-top" src="static/lorem.png" alt="full w2v" style:"height:40%;">
+                    </div>
+                </div>
+                <div class="card text-card" style="float:right;">
+                    <div class="card-body">
+                        <div class="vertical-center">   
+                            <h4 class="card-title mt-3 ms-3">Clustering our speakers</h4>
+                            <h5 class="card-subtitle mb-2 ms-3 text-muted">Another way of assessing the polarization</h5>
+                            <p class="card-text ms-3">          
+                                Yes nice, but what about it? 
+                                Ideally, we would expect that different kinds of people speak differently, and that this clustering gives us 4 "personnas", robot portraits of who speaks in this way rather then that. Of course, the world is not ideal, but sometimes we get lucky. To characterise a cluster, we look at speakers closest to its center. In doing so we identify two clusters with pretty defined traits:
+                                - The US politician
+                                - The Indian
+                            </p>
+                        </div>
+                                
+                    </div>
+                </div>
+            </div>
 
         </div>  
 
