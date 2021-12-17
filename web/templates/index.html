@@ -144,7 +144,7 @@
             </div>
 
 
-            <hr class="mt-2 mb-3"/>
+            <hr class="mt-4 mb-3"/>
 
             <h2 id=""></h2>
             <!--#SECTION Lucas : Demographics-->
@@ -157,13 +157,13 @@
             </div>
 
             <h3 class="text-muted mb-2">Demographics</h3>
-            <p>
+            <p class="justified">
                 We need to know more about our speakers to differentiate them on a larger scale, and perhaps spot some peculiar influence on the distribution of their position.
                 Thus, we've chosen to add gender, age, and political affiliation to each speaker. 
                 To do so, we've run a couple of hundred of thousand Wikipedia searches on the speakers. 
                 Some of their pages were neatly completed, and their current political party was filled in as well as their birthdate.
             </p>
-            <p>
+            <p class="justified mb-3">
                 Sadly, it was <strike>sometimes</strike>, well <strike>rarely</strike>, ... , <b>never</b> the case. 
                 Therefore, we've used some pretty minimalist heuristics to fill in each feature when we couldn't correctly recover the features.
                 For the political affiliation, we simply counted the occurrences of words like "socialist", or "right-wing" on each speaker's page. 
@@ -174,21 +174,17 @@
 
 
             <img src="static/demographics_annotated.png" ></img> 
-            <p>
+            <p class="justified mt-4 mb-4">
                 Now there's a few things we can see here. 
-                First, there are way more democrats in the processed data than republicans. (7083 Democrats against 3887 Republicans)
-                This doesn't necessarily mean that there are more democrats than republicans quotes in the news, 
-                but simply that republicans are less likely to express their views on durability issues. 
+                First, there are way more Democrats in the processed data than republicans. (7083 Democrats against 3887 Republicans)
+                This doesn't necessarily mean that there are more Democrats than Republicans quotes in the news, 
+                but simply that Republicans are less likely to express their views on durability issues. 
                 <br>
                 Oddly enough, the age seems fairly distributed between both political wings. The means are 3 months differents (Democrats are on average 62.15 years old). And both the median and the quartiles are equal (25%:52 years old,  50%:63years old, 75%: 72 years old).
                 However, the average speaker is way older than the average American (38.1 years old according to 2019's census).
                 <br>
-            </p>
-            </p>
-               
-                          </p>
 
-            <hr class="mt-2 mb-3"/>
+
 
 
             
@@ -220,12 +216,9 @@
             </div>
             
             
-            
-            <hr class="mt-2 mb-3"/>
 
-            Etude verbeuse des personnas et statistiques (faire des describes de chaque ds)
 
-            <hr class="mt-2 mb-3"/>
+            <hr class="mt-4 mb-3"/>
 
             <!--#SECTION Harold : Polarization-->
 
@@ -343,62 +336,63 @@
             <hr class="mt-2 mb-3"/>
             
             <h2 class="mb-2"> Examining the different topics of climate change </h3>
-
-            After seeing that there was no noticeable evolution of the polarization of the narrative around climate change on a global scale, we decided to dig a little further and examine the narrative around specific topics.
+            <p class="justified  mt-4 mb-4">
+                After seeing that there was no noticeable evolution of the polarization of the narrative around climate change on a global scale, we decided to dig a little further and examine the narrative around specific topics.
+            </p>
             <br>
             <h3 class="mt-3 mb-2 text-muted">Polemic topics</h3>
+            <p class="justified">
+                Polemic topics and polarization go hand in hand, therefore, a good first step would be to be able to classify a topic as controversial or not.
+                <br>
 
-            Polemic topics and polarization go hand in hand, therefore, a good first step would be to be able to classify a topic as controversial or not.
-            <br>
+                Looking at the definition of <b>controversy</b> from Werriam-Webster, we see: <i>"a discussion marked especially by the expression of opposing views".</i>
+                <br>
 
-            Looking at the definition of <b>controversy</b> from Werriam-Webster, we see: <i>"a discussion marked especially by the expression of opposing views".</i>
-            <br>
+                Thus, a topic whose daily polarity score is very stable throughout time would not be considered controversial, as around the same level of sentimental polarity is expressed each day (e.g. we need to breathe to live). 
+                Whereas a topic where the daily polarity score tends to swing between -1 and 1, can be considered as a topic where there is an expression of opposing views (e.g. anything about Trump).
+                <br>
 
-            Thus, a topic whose daily polarity score is very stable throughout time would not be considered controversial, as around the same level of sentimental polarity is expressed each day (e.g. we need to breathe to live). 
-            Whereas a topic where the daily polarity score tends to swing between -1 and 1, can be considered as a topic where there is an expression of opposing views (e.g. anything about Trump).
-            <br>
+                Therefore, examining the empirical variance of the daily average polarity score of a given topic seems like a reasonable heuristic.
+                <br>
+                
+                This heuristic assumes that there aren't consistently opposing views that cancel each other exactly the same day. This assumption tends to hold when looking at the data and its quantity.
+                <br>
+                
+                Using our heuristic, we extracted the top 4 most (non)polemic topics.
+                <br>
+                <table class="table mt-2" style="width:60%; margin :auto;">
+                    <thead>
+                        <tr>
+                            <th>Rankings</th>
+                            <th>Most polemic topics</th>
+                            <th>Most non-polemic topics</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1</td>
+                            <td>Wildfires</td>
+                            <td>Earth</td>
+                        </tr>                
+                        <tr>
+                            <td>#2</td>
+                            <td>Deforestation</td>
+                            <td>Climate</td>
+                        </tr>                
+                        <tr>
+                            <td>#3</td>
+                            <td>Ecosystem</td>
+                            <td>Gas</td>
+                        </tr>                
+                        <tr>
+                            <td>#4</td>
+                            <td>Ozone</td>
+                            <td>Sustainability</td>
+                        </tr>
+                    </tbody>
 
-            Therefore, examining the empirical variance of the daily average polarity score of a given topic seems like a reasonable heuristic.
-            <br>
-            
-            This heuristic assumes that there aren't consistently opposing views that cancel each other exactly the same day. This assumption tends to hold when looking at the data and its quantity.
-            <br>
-            
-            Using our heuristic, we extracted the top 4 most (non)polemic topics.
-            <br>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Rankings</th>
-                        <th>Most polemic topics</th>
-                        <th>Most non-polemic topics</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>#1</td>
-                        <td>Wildfires</td>
-                        <td>Earth</td>
-                    </tr>                
-                    <tr>
-                        <td>#2</td>
-                        <td>Deforestation</td>
-                        <td>Climate</td>
-                    </tr>                
-                    <tr>
-                        <td>#3</td>
-                        <td>Ecosystem</td>
-                        <td>Gas</td>
-                    </tr>                
-                    <tr>
-                        <td>#4</td>
-                        <td>Ozone</td>
-                        <td>Sustainability</td>
-                    </tr>
-                </tbody>
-
-            </table>
-            
+                </table>
+            </p>
             <h4 class="mt-5 mb-3 text-muted">Let's take a look at the polarities of these topics throughout the years.</h4>
 
             <div style="display:flex">
@@ -453,47 +447,48 @@
             
 
             <h3 class="mb-2 text-muted"> Examples of quotes</h3>
-            
-            To make things a little more fun and tangible, let us look at some quotes to get a better feeling of the narrative.
-            <br>
+            <p class="justified">
+                To make things a little more fun and tangible, let us look at some quotes to get a better feeling of the narrative.
+                <br>
 
-            An example of a very negative quote around these polemic topics is: 
-            <br>
+                An example of a very negative quote around these polemic topics is: 
+                <br>
 
-            "<i>Where a complaint alleges, knowing governmental action is affirmatively and substantially <b>damaging the climate system</b> in a way that will cause <b>human deaths</b>, shorten human lifespans, result in widespread damage to property, threaten human food sources and  <b>dramatically alter the planet's ecosystem </b>, it states a claim for a due process violation to hold. Otherwise, it would be to say that the constitution affords no protection against a <b>government's knowing decision to poison the air</b> its citizens breathe or the water its citizens drink.</i>"
-            <b class="text-muted">Ann Aiken</b>, USA Oregon District judge.
-            <br>
-            <br>
+                "<i>Where a complaint alleges, knowing governmental action is affirmatively and substantially <b>damaging the climate system</b> in a way that will cause <b>human deaths</b>, shorten human lifespans, result in widespread damage to property, threaten human food sources and  <b>dramatically alter the planet's ecosystem </b>, it states a claim for a due process violation to hold. Otherwise, it would be to say that the constitution affords no protection against a <b>government's knowing decision to poison the air</b> its citizens breathe or the water its citizens drink.</i>"
+                <b class="text-muted">Ann Aiken</b>, USA Oregon District judge.
+                <br>
+                <br>
 
-            An example of a very positive quote is: 
-            <br>
+                An example of a very positive quote is: 
+                <br>
 
-            "<i>While the agenda on climate change looks precarious with president elect Trump's picks of climate change skeptics and denialists. Latin america is heading in the opposite direction. In 2017, we expect to increasingly hear actors in the private sector, banks and civil society making the case for why <b>action on climate change</b> is needed for <b>sustainable development</b>. Countries from the region strongly back the Paris climate agreement and in November many announced plans to <b>reduce emissions</b> and promote <b>renewable energy</b> during the UN climate change conference in Marrakech.[...]</i>" 
-            <b class="text-muted">Guy Edwards</b>, consultant focusing on climate change, geopolitics and Latin America.
-            <br>
-            <br>
-
+                "<i>While the agenda on climate change looks precarious with president elect Trump's picks of climate change skeptics and denialists. Latin america is heading in the opposite direction. In 2017, we expect to increasingly hear actors in the private sector, banks and civil society making the case for why <b>action on climate change</b> is needed for <b>sustainable development</b>. Countries from the region strongly back the Paris climate agreement and in November many announced plans to <b>reduce emissions</b> and promote <b>renewable energy</b> during the UN climate change conference in Marrakech.[...]</i>" 
+                <b class="text-muted">Guy Edwards</b>, consultant focusing on climate change, geopolitics and Latin America.
+                <br>
+                <br>
+            </p>
             <h3 class="mb-2 text-muted"> Is the narrative polarized ?</h3>
-            When starting to work on the polarization of the narrative around climate change, we expected to see an opposition between a climate change skeptic narrative and a climate change the alarmistic narrative. But, our findings don't back up our expectations.
-            
-            Instead, as we can see from those two quotes, and it generalizes well to the rest of the corpus, quotes considered opposite by our sentimental polarity score tend to share a similar feeling: <b>Climate change is important and we need to act about it</b>. Indeed, the narrative around climate change can either be alarmistic about the current situation or hopeful and positive about the actions taken.
-            
-            <br>
+            <p class="justified">
+                When starting to work on the polarization of the narrative around climate change, we expected to see an opposition between a climate change skeptic narrative and a climate change the alarmistic narrative. But, our findings don't back up our expectations.
+                
+                Instead, as we can see from those two quotes, and it generalizes well to the rest of the corpus, quotes considered opposite by our sentimental polarity score tend to share a similar feeling: <b>Climate change is important and we need to act about it</b>. Indeed, the narrative around climate change can either be alarmistic about the current situation or hopeful and positive about the actions taken.
+                
+                <br>
 
-            Thus, either, the climate change skeptic narrative is actually much smaller than we think and is a case of a loud minority or tools such as sentimental polarity and word embeddings are not the right tools to dissociate the two narratives.
-            
+                Thus, either, the climate change skeptic narrative is actually much smaller than we think and is a case of a loud minority or tools such as sentimental polarity and word embeddings are not the right tools to dissociate the two narratives.
+            </p>
             <hr class="mt-2 mb-3"/>
             <!--#SECTION ANTOINE:W2V-->
 
 
             <h2 class="mb-2 text-muted"> Word embedding</h3>
-
-            Word2Vec is a word embedding technique used to compute a low-dimensional vector capturing the semantic meaning of a word. It aims to quantify and categorize semantic similarities between linguistic items based on their distributional properties in large samples of language data. Once we have an N-dimensional vector representing the semantic of a word we can compute such a vector for every quotation in the dataset by simply taking the mean of every word it contains. Therefore, in theory, two quotes at the different ends of the spectrum should have a large distance between them and this would let us compute a "semantic distance" between quotes. 
-            <br>
-            We chose to use a pre-trained model with vectors of dimensions N = 300. This model contained already all the words we encountered in selected quotations of Quotebank. 
-            <br>
-            We then added the polarization feature to each point to evaluate if the difference in the polarization has a reality in the semantics used by these speakers. Here we plotted the representation in the 3 principal components (computed with PCA).
-
+            <p class="justified mb-4">
+                Word2Vec is a word embedding technique used to compute a low-dimensional vector capturing the semantic meaning of a word. It aims to quantify and categorize semantic similarities between linguistic items based on their distributional properties in large samples of language data. Once we have an N-dimensional vector representing the semantic of a word we can compute such a vector for every quotation in the dataset by simply taking the mean of every word it contains. Therefore, in theory, two quotes at the different ends of the spectrum should have a large distance between them and this would let us compute a "semantic distance" between quotes. 
+                <br>
+                We chose to use a pre-trained model with vectors of dimensions N = 300. This model contained already all the words we encountered in selected quotations of Quotebank. 
+                <br>
+                We then added the polarization feature to each point to evaluate if the difference in the polarization has a reality in the semantics used by these speakers. Here we plotted the representation in the 3 principal components (computed with PCA).
+            </p>
             <div style="display:flex">
                 <div class="card" style="width: 40%; float:left; flex:1;">
                     <div class="card-body">
@@ -537,9 +532,9 @@
                 </div>
             </div>
 
-
-            We can make the hypothesis that during the last year the debate might get more and more polarized and the semantic difference might increase between two people that have different opinions. To assess this difference we can use a metric used in this <a href="https://ieeexplore.ieee.org/document/8181508">paper</a> to compute the distance between two clusters based on the sentiment. It takes into account the ratio between the distance intra-cluster and inter-cluster. It thus gives one score for how much the two groups are clustered. With our assumption, we would expect to find an increasing value of the metric. Nevertheless here is the series of values we obtained :
-
+            <p class="justified  mt-4 mb-4">
+                We can make the hypothesis that during the last year the debate might get more and more polarized and the semantic difference might increase between two people that have different opinions. To assess this difference we can use a metric used in this <a href="https://ieeexplore.ieee.org/document/8181508">paper</a> to compute the distance between two clusters based on the sentiment. It takes into account the ratio between the distance intra-cluster and inter-cluster. It thus gives one score for how much the two groups are clustered. With our assumption, we would expect to find an increasing value of the metric. Nevertheless here is the series of values we obtained :
+            </p>
             <div style="display:flex">
                 <div class="card" style="width: 40%; float:left; flex:1;">
                     <div class="card-body">
@@ -566,10 +561,10 @@
             <h4 id="bonus" class="mb-2 text-muted"> Your polarization</h3>
 
             
-
+            <p class="justified  mt-4 mb-4">
             Word2Vec is also good for handling user input. Now you can try to input what you think about climate change and the program will be able to tell you who is close to you on the political compass and plot your sentence among all the others present in the dataset.
-            
-            <form class="mt-2" method="POST">
+            </p>
+            <form class="mt-2" method="POST" style="margin :auto; width:60%;">
                 <div class="form-group">
                     <label for="prompt">Try it yourself!</label>
                     <input name="prompt" class="form-control" id="prompt" placeholder="Enter your sentence here">
@@ -608,11 +603,12 @@
 
             <h3 class="mb-2 text-muted">Polemic Topics</h3>
 
+            <p class="justified  mt-4 mb-4">
 
-            <br>
             Some topics might be more important for personalities from one wing than one from another. These topics are thus important in politics because they might convince a lot of electors to vote for someone if they feel they care about the same thing. These subjects are thus really important. We would thus like to find out, for each political wing, which topic they take ownership of.
             <br>
             At first we tried to look at the occurences of each topics in each wing. Here are the result for some example topics :
+            </p>
             <div style="display:flex">
                 <div style="flex:1;">
                     <img src="static/antoine_plots/topic_wing_counts/agriculture.png">
@@ -632,11 +628,11 @@
                     <img src="static/antoine_plots/topic_wing_counts/sequestration.png">
                 </div>
             </div>
-
-            Nevertheless, we can see that most of these graphs show an important presence of the democrat in most of the topics. That is since overall, more Democrats talk about these kinds of issues than Republicans.
-
-            So we need to study the proportion of the speaker of each wing that talked about each of these issues to get rid of these problem. We thus end up with this graph :
-
+            <p class="justified  mt-4 mb-4">
+                Nevertheless, we can see that most of these graphs show an important presence of the democrat in most of the topics. That is since overall, more Democrats talk about these kinds of issues than Republicans.
+                <br>
+                So we need to study the proportion of the speaker of each wing that talked about each of these issues to get rid of these problem. We thus end up with this graph :
+            </p>
 
             <div style="display:flex">
                 <div class="card text-card" style="float:right;">
@@ -729,7 +725,7 @@
                 Now that we have various ways to identify our speakers, and how each of them speak, we can look for similarities and disparities between speakers, and how we can explain them. (TODO maybe redondant avec des parties du dessus l'intro de cette partie). 
                 Humans like to categorize, and we are humans, so let's go. We can cluster our speakers based on their speach-print, their word embeddings. Using KMeans, word embeddings of speakers cluster in the following way. 
             </p>
-            <div style="display:flex">
+            <div class="mt-4" style="display:flex">
 
                 <div class="card" style="width: 40%; float:left; flex:1;">
                     <div class="card-body">

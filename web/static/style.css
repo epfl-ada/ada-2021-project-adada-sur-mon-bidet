@@ -26,3 +26,9 @@ img{
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+.justified{
+    width: 60%;
+    text-align: justify;
+    text-justify: inter-word;
+    margin: auto;
+}
