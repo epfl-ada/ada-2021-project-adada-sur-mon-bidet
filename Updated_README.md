@@ -13,7 +13,7 @@ Our data story can be found here: INSERT URL
 
 - Who talks about climate, who is most often quoted?
 - How does the narrative about climate change evolve from 2015 to 2020? Is it increasingly polarized? 
-- If it is polarized, what influences it? (political acquaintance, profession, ...) 
+- If it is polarized, what influences it? (political acquaintance, age, gender ...) 
 - Does the narrative concentrate on polemic topics?
 
 ## Additional datasets:
@@ -53,7 +53,7 @@ Sentiment analysis is a technique that allows us to extract, identify and quanti
 
 Using our polarity score, we can now plot the polarity score of our corpus. We first examine global trends with different time granularity (yearly, monthly, daily). Afterward, we examine the narrative of precise climate change topics. More precisely, we define, using a heuristic, how controversial a topic is. Using this measure, we examine specifically polemic and non-polemic topics.
 
-Furthermore, we use word embedding with the help of PCA to project the quotes in 3D space and examine the semantic space separation. This allows us to assess the semantic difference between speeches that are polarized positively and negatively. We can try to assess the evolution, throughout time, of this semantic difference. The bigger it is, the more the speeches are different in their vocabulary and argumentation. Thus, the polarized group tends to be more and more opposed.
+Furthermore, we use word embedding with the help of PCA to project the quotes in 3D space and examine the semantic space separation. This allows us to assess the semantic difference between speeches that are polarized positively and negatively. We can try to assess the evolution, throughout time, of this semantic difference. The bigger it is, the more the speeches are different in their vocabulary and argumentation. Thus, the polarized group tends to be more and more opposed. We will check if, overall, the discussion tends to be more and more polarized and discriminate by subject to see if some topics is more polemic than others.
 
 Finally, we combine the speakers' features and polarity score to get an overview of how polarity evolves depending on political party to wrap up.
 
