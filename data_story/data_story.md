@@ -49,8 +49,8 @@ Humans like to categorize, and we are humans, so let's go. We can cluster our sp
 
 Yes nice, but what about it? 
 Ideally, we would expect that different kinds of people speak differently, and that this clustering gives us 4 "personnas", robot portraits of who speaks in this way rather then that. Of course, the world is not ideal, but sometimes we get lucky. To characterise a cluster, we look at speakers closest to its center. In doing so we identify two clusters with pretty defined traits:
-- The US politician
-- The Indian
+- US democrat politician (green)
+- Foreign politicians (yellow)
 
 <Embbed scatterplot with pictures or other viz with pictures of 10 speakers>
 
