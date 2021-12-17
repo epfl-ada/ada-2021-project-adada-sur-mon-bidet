@@ -2,8 +2,7 @@
 ## Is it growing as fast as the polar circle is shrinking? 
 
 ## Abstract:
-As the effects of climate change become increasingly visible in our daily life, it is time for humanity to come together for a joint effort to come back to an equilibrium with nature. A joint effort requires collaboration and agreement on what climate change is and what we should do. In this data story, we will study the polarization of opinions around climate change that tend to make this collaboration difficult to accomplish and examine its dynamics. This will be done through the lens of Quotebank, an open corpus of 178 million quotations
-attributed to the speakers who uttered them, extracted from 162 million English news articles published between 2008 and 2020.
+As the effects of climate change become increasingly visible in our daily life, it is time for humanity to come together for a joint effort to come back to an equilibrium with nature. A joint effort requires collaboration and agreement on what climate change is and what we should do. In this data story, we will study the polarization of opinions around climate change that tend to make this collaboration difficult to accomplish and examine its dynamics. This will be done through the lens of Quotebank, an open corpus of 178 million quotations attributed to the speakers who uttered them, extracted from 162 million English news articles published between 2008 and 2020.
 
 
 ## Data Story
@@ -24,13 +23,10 @@ Wikipedia will be used to fetch more information about each quoted person.
 
 ### Preprocessing
 
-We filtered the original Quotebank 2015-2020 JSON files, keeping only quotations with known speakers (certainty > 0.9) and containing a word related to climate change. To distinguish "words relating to climate change", we constructed a 'base' dictionary from various online sources, and a 'wide' dictionary of more questionable pertinence, which extends the basis with NLTK's WordNet. Also, URLs are stripped to domain names, as we do not intend to access the full articles. Results of this preliminary filtering are in the 'output' directory.
+We filtered the original Quotebank 2015-2020 JSON files, keeping only quotations with known speakers (certainty > 0.9) and containing a word related to climate change. To distinguish "words relating to climate change", we constructed a hand-curated dictionary. This dictionary contains 62 words that cover all the topics specific to climate change. We will refer to these topics throughout our data story. Going further, we made sure to reduce the false positive rate around certain topics like "energy" or "atmosphere" which tend to talk more about football games than climate.
 
-These new JSONs are further preprocessed into yearly pickles to reduce loading times.
 
-We assume that the quotes that we are working on in the following sections should all have the theme of climate change.
-
-IMPORTANT: we can associate to a quote its specific topic.
+In the rest of our analysis, we assume that the quotes that we are working on in the following sections should all have the theme of climate change.
 
 ### Examining the people driving the climate change narrative
 
@@ -38,17 +34,15 @@ IMPORTANT: we can associate to a quote its specific topic.
 
 ### How to measure and extract polarization ?:
 
-Let us define polarization.
+We define polarization as *: a state in which the opinions, beliefs, or interests of a group or society no longer range along a continuum but become concentrated at opposing extremes.*
 
-*Polarization: a state in which the opinions, beliefs, or interests of a group or society no longer range along a continuum but become concentrated at opposing extremes.*
-
-In our case, we measure the polarization of these different quotes by a combination of sentiment analysis(polarity of sentiment) and the "separation" of quotes in their semantics/meaning. "I hate" or "I love" are two very opposite sentiments, but there's also a clear difference in their meaning. Below, we explain the methods that will let us mathematically extract these qualities.
+In our case, we measure the polarization of these different quotes by a combination of sentiment analysis(polarity of sentiment) and the "separation" of quotes in their semantics/meaning. "I hate" or "I love" are two very opposite sentiments, but there's also a clear difference in their meaning. 
 
  We use two methods: sentiment analysis and word embedding
 
 Sentiment analysis is a technique that allows us to extract, identify and quantify affect states in text. Sentiment analysis will let us assign a "sentiment" polarity score to a quote. This score spans the interval [-1,1] with -1 being extremely negative and 1 being extremely positive.
 
- Word embedding aims to quantify and categorize semantic similarities between linguistic items based on their distributional properties in large samples of language data. To put it simply, word embedding maps a word to a "semantic space" i.e. N-dimensional space where words with very different meanings should have a large distance between them. Therefore, in theory, two quotes at the different ends of the spectrum should have a large distance between them and this would let us compute a "polarity distance" between quotes. 
+ Word embedding aims to quantify and categorize semantic similarities between linguistic items. To put it simply, word embedding maps a word to a "semantic space" i.e. N-dimensional space where words with very different meanings should have a large distance between them. Therefore, in theory, two quotes at the different ends of the spectrum should have a large distance between them and this would let us compute a "polarity distance" between quotes. 
 
 
 ### How to study and visualize polarization ?:
