@@ -55,7 +55,7 @@ Sentiment analysis is a technique that allows us to extract, identify and quanti
 
 Using our polarity score, we can now plot the polarity score of our corpus. We first examine global trends with different time granularity (yearly, monthly, daily). Afterwards, we examine the narrative of precise climate change topics. More precisely, we define, using a heuristic, how controversial a topic is. Using this measure, we examine specifically polemic and non-polemic topics.
 
-Furtheremore, we use word embedding with the help of PCA to project the quotes in 3D space and examine the semantic space separation.
+Furtheremore, we use word embedding with the help of PCA to project the quotes in 3D space and examine the semantic space separation. This allows us to assess the semantic difference between speeches tht is polarized postively and negatively. We can try to assess the evolution, throughout time, of this semantic difference. The bigger it is, the more the speeches are different in their vocabulary and argumentation. Thus the polarized group tend to be more and more opposed.
 
 
 
