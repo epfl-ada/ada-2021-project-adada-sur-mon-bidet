@@ -488,11 +488,8 @@
 
             <h2 class="mb-2 text-muted"> Word embedding</h3>
             <p class="justified mb-4">
-                Word2Vec is a word embedding technique used to compute a low-dimensional vector capturing the semantic meaning of a word. It aims to quantify and categorize semantic similarities between linguistic items based on their distributional properties in large samples of language data. Once we have an N-dimensional vector representing the semantic of a word we can compute such a vector for every quotation in the dataset by simply taking the mean of every word it contains. Therefore, in theory, two quotes at the different ends of the spectrum should have a large distance between them and this would let us compute a "semantic distance" between quotes. 
                 <br>
-                We chose to use a pre-trained model with vectors of dimensions N = 300. This model contained already all the words we encountered in selected quotations of Quotebank. 
-                <br>
-                We then added the polarization feature to each point to evaluate if the difference in the polarization has a reality in the semantics used by these speakers. Here we plotted the representation in the 3 principal components (computed with PCA).
+                Word embedding aims to quantify and categorize semantic similarities between linguistic items. To put it simply, word embedding maps a word to a "semantic space" i.e. N-dimensional space where words with very different meanings should have a large distance between them. Therefore, in theory, two quotes at the different ends of the spectrum should have a large distance between them and this would let us compute a "polarity distance" between quotes. We then added the polarization feature to each point to evaluate if the difference in the polarization has a reality in the semantics used by these speakers. Here we plotted the representation in the 3 principal components (computed with PCA).
             </p>
             <div style="display:flex">
                 <div class="card" style="width: 40%; float:left; flex:1;">
@@ -522,8 +519,8 @@
                             <h4 class="card-title mt-3 ms-3">Polarity score distribution throughout all quotations</h5>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">Wayyyy tidier</h6>
                             <p class="card-text ms-3">
-                                Where we see a clear difference between the two cluster. This means that <b>there is a semantic difference</b> is the language between two messages that are polarized differently. Two persons that have a speech that is polarized differently tends to diverge semanticaly speaking.
-                                This might mean that they use a different way to argue about precise the climate. The vocabulary might be different but also the way to build sentence.
+                                In this one, we see a clear difference between the two clusters. This means that <b>there is a semantic difference</b> in the language between two messages that are polarized differently. Two persons doing a speech that is polarized differently tend to diverge semantically speaking.
+                                It might mean that they use a different way to argue about the climate.
                                 
                             </p>
                         </div>
@@ -538,7 +535,7 @@
             </div>
 
             <p class="justified  mt-4 mb-4">
-                We can make the hypothesis that during the last year the debate might get more and more polarized and the semantic difference might increase between two people that have different opinions. To assess this difference we can use a metric used in this <a href="https://ieeexplore.ieee.org/document/8181508">paper</a> to compute the distance between two clusters based on the sentiment. It takes into account the ratio between the distance intra-cluster and inter-cluster. It thus gives one score for how much the two groups are clustered. With our assumption, we would expect to find an increasing value of the metric. Nevertheless here is the series of values we obtained :
+                We can hypothesize that, during the last year, the debate might get more and more polarized. As seen before, this might lead to an increasing semantic distance between people polarized differently. To assess this difference, we can use a metric used in this <a href="https://ieeexplore.ieee.org/document/8181508">paper</a>, the <b>normalized cut</b>, to compute the distance between two clusters based on the polarization. It takes into account the distance intra-cluster and inter-cluster. It thus gives one score for how much the two groups are clustered. Given our assumption, we would expect to find an increasing value of the metric. Nevertheless, here is the series of values we obtained :
             </p>
             <div style="display:flex">
                 <div class="card" style="width: 40%; float:left; flex:1;">
@@ -553,7 +550,7 @@
                             <h4 class="card-title mt-3 ms-3">The evolution of the semantic divide</h5>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">is definitely not what we expected</h6>
                             <p class="card-text ms-3">
-                                As we can see on the graph, this is not exactly what we obtained. In the first place, the huge variations in 2016 are actually due to the lack of data during these months which leads to noisy values. In the second place, we can observe that the normalized cut throughout the years seems to be rather high (comparable to the paper's value) but really steady. There doesn't seem to be an overall increasing semantic difference between the group that is polarized positively and negatively.                                 
+                                As we can see on the graph, this is not exactly what we obtained. In the first place, the huge variations in 2016 are actually due to the lack of data, which leads to noisy values. In the second place, we can observe that the normalized cut throughout the years seems to be rather high (comparable to the paper's values) but really steady. There doesn't seem to be an increasing semantic difference between the groups.                                 
                             </p>
                         </div>
                                 
@@ -567,12 +564,12 @@
 
             
             <p class="justified  mt-4 mb-4">
-            Word2Vec is also good for handling user input. Now you can try to input what you think about climate change and the program will be able to tell you who is close to you on the political compass and plot your sentence among all the others present in the dataset.
+                Word2Vec is also good for handling user input. Now you can try to input what you think about climate change, and the program will be able to tell you who is close to you on the political compass and plot your sentence among all the others present in the dataset.
             </p>
             <form class="mt-2" method="POST" style="margin :auto; width:60%;">
                 <div class="form-group">
                     <label for="prompt">Try it yourself!</label>
-                    <input name="prompt" class="form-control" id="prompt" placeholder="Enter your sentence here">
+                    <input name="prompt" class="form-control" id="prompt" placeholder="I don't think climate change is such a problem">
                     <small class="form-text text-muted">We'll show you the closest quote to your prompt</small>
                   </div>                
                   <button type="submit" class="btn btn-primary">Submit</button>           
@@ -610,9 +607,9 @@
 
             <p class="justified  mt-4 mb-4">
 
-            Some topics might be more important for personalities from one wing than one from another. These topics are thus important in politics because they might convince a lot of electors to vote for someone if they feel they care about the same thing. These subjects are thus really important. We would thus like to find out, for each political wing, which topic they take ownership of.
+                Some topics might be more important for one wing than for another. These topics are thus important in politics because they might convince a lot of electors to vote for someone. Let's try to find, for each topic, their favorite topics.
             <br>
-            At first we tried to look at the occurences of each topics in each wing. Here are the result for some example topics :
+            At first, we tried to look at the occurrences of each topic in each wing. Here are the result for some example topics :
             </p>
             <div style="display:flex">
                 <div style="flex:1;">
@@ -634,9 +631,9 @@
                 </div>
             </div>
             <p class="justified  mt-4 mb-4">
-                Nevertheless, we can see that most of these graphs show an important presence of the democrat in most of the topics. That is since overall, more Democrats talk about these kinds of issues than Republicans.
+                Nevertheless, we can see that most of these graphs show an important presence of the democrat in most of the topics. It is not really surprising since, as we saw above, the Democrats are, overall, way more represented in the dataset than the Republicans.
                 <br>
-                So we need to study the proportion of the speaker of each wing that talked about each of these issues to get rid of these problem. We thus end up with this graph :
+                We need to study the proportion of the speaker of each wing that talked about each of these issues. It will, thus, take into account, the presence of each wing and avoid the problem. We thus end up with this graph :
             </p>
 
             <div style="display:flex">
@@ -647,7 +644,7 @@
                             <h4 class="card-title mt-3 ms-3">Studying the proportion of speakers from each wing</h4>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">Who cares enough to talk about it</h5>
                             <p class="card-text ms-3">
-                                In this one, we see that both wings seemed to answer each other pretty well. Nevertheless, some topics tend to have a small be more slightly more used by a wing than by the other. For instance, republicans talk more about <b>hurricanes</b> or <b>earth</b> as the democrat would do. That's not really surprising because as <a href="https://www.nbcnews.com/think/opinion/if-republicans-really-cared-about-hurricane-victims-they-d-stop-ncna1238686">this article</a> suggests is that Republicans tend to talk a lot about hurricanes but not necessarily to talk about the deeper problem of climate. That's also what can suggest the wider utilization of <b>earth</b>. On the other hand Democrats are more inclined to talk about <b>coal</b>, <b>energies</b>, or <b>solar</b> power.
+                                In this one, we see that both wings seemed to answer each other pretty well. Nevertheless, some topics tend to be more slightly more used by a wing than by the other. For instance, republicans talk more about <b>hurricanes</b> or <b>earth</b> than the democrat would. That's not really surprising because as <a href="https://www.nbcnews.com/think/opinion/if-republicans-really-cared-about-hurricane-victims-they-d-stop-ncna1238686">this article</a> suggests, the Republicans tend to be concerned about hurricanes but not necessarily talk about the deeper problem of climate. That's also what can suggest the wider utilization of <b>earth</b>. On the other hand Democrats are more inclined to talk about <b>coal</b>, <b>energies</b>, or <b>solar</b> power.
                             </p>
                         </div>
                                 
@@ -673,7 +670,7 @@
                             <h4 class="card-title mt-3 ms-3">Determining which topic is polemic</h4>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">Assessing the sentiment distribution for each topic with regard to the wing of the speaker</h5>
                             <p class="card-text ms-3">
-                                We can see on this graph that some subjects have a really different mean polarization between speakers of different wings. Among these we can find subject for which the difference is statistically significant with a confidence of interval of 90% :
+                                Some subjects have a really different mean polarization between speakers of different wings. Among these we can find subjects for which the difference is statistically significant with a confidence of interval of 90% :
                                     <b>agriculture</b>,
                                     <b>atmosphere</b>,
                                     <b>climate</b>,
@@ -684,7 +681,7 @@
                                     <b>sequestration</b> and
                                     <b>sustainability</b>.  
                                     <br>          
-                                    They were some other topics that had a big difference in polarization but the small number of speakers dealing with these makes it not statistically significant.
+                                    Some points on the graph seem to have a big polarization difference but don't appear here. That's because they are minor topics that aren't used enough to yield statistically meaningful results.
 
                             </p>
                         </div>
@@ -701,9 +698,9 @@
                             <h4 class="card-title mt-3 ms-3">Semantic Separation</h4>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">Another way of assessing the polarization</h5>
                             <p class="card-text ms-3">
-                                Studying the way the semantic varies between the speakers for each topic that are polarized positively and negatively as we did for the whole group before allows us to assess the polarization. In this part, we hope to find, throughout time, an evolution in the way the speakers argue about particular topics. If the distance increases we could deduce that the semantic difference in the speeches tends to grow over time showing that the subject becomes more and more cleaving. We also think we could find subjects for which this distance remains steady, meaning the debate tends to remain the same over time. Finally, there might be topics for which the speech tends to become more and more similar. The normalized cut would reduce. Indeed we find subjects following each of these trends.
+                                In this part, we hope to find, throughout time, an evolution in the way the speakers argue about particular topics. If the distance between the two groups increases, we could conclude that the semantic difference in the speeches tends to grow over time. It would mean that the subject becomes more and more cleaving. We also think we could find subjects for which this distance remains steady, meaning the debate tends to remain the same over time. Finally, there might be topics for which the speech of both groups converges. There exists subjects following each of these trends.
                                 <br>
-                                As we see here, speeches about <b>deforestation</b> tend to get more and more polarized semantically. <b>Methane</b> follows a similar track but half as fast. The debate on <b>energy</b> has a high distance between the two groups but this distance is constant. The debate and the polarization don't seem to vary so much over time. Moreover, we can see that the debates on <b>ozone</b> tend to be less and less cleaving. That may be because this problem that emerged in the late '90s is now considered less important (and more or less solved) than others or that everyone reaches a similar opinion, using the same term and same amount of polarization in their speeches. On the other hand, the awareness about deforestation has risen these last year following the wildfires that occurred in Amazonia for instance.
+                                As we see here, speeches about <b>deforestation</b> tend to get more polarized semantically. <b>Methane</b> follows a similar track but half as fast. The debate on <b>energy</b> has a high distance between the two groups, but the latter is constant. The debate and the polarization don't seem to vary so much over time. Moreover, we can see that the debates on <b>ozone</b> tend to be less and less cleaving. That may be because this problem, which emerged in the late '90s, is now considered less important (and more or less solved) than others. Another solution is that everyone reaches a similar opinion, using the same term and the same amount of polarization in their speeches. On the other hand, the awareness about deforestation has risen these last years, following the wildfires that occurred in Amazonia for instance.
 
                             </p>
                         </div>
