@@ -636,48 +636,78 @@
                 </div>
             </div>
 
-            <br>
-            <br>
-            <h4 id="bonus" class="mb-2 text-muted"> Your polarization</h3>
 
-            
-            <p class="justified  mt-4 mb-4">
-            Word2Vec is also good for handling user input. Now you can try to input what you think about climate change and the program will be able to tell you who is close to you on the political compass and plot your sentence among all the others present in the dataset.
+            <div id="part6" class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Building personnas</h1>
+                    <h2 class="lead mb-2 text-muted" >As if there weren't enough prejudice in the dataset</h2>
+                </div>
+            </div>
+            <p class="justified">
+                Now that we have various ways to identify our speakers, and how each of them speak, we can look for similarities and disparities between speakers, and how we can explain them. (TODO maybe redondant avec des parties du dessus l'intro de cette partie). 
+                Humans like to categorize, and we are humans, so let's go. We can cluster our speakers based on their speach-print, their word embeddings. Using KMeans, word embeddings of speakers cluster in the following way. 
             </p>
-            <form class="mt-2" method="POST" style="margin :auto; width:60%;">
-                <div class="form-group">
-                    <label for="prompt">Try it yourself!</label>
-                    <input name="prompt" class="form-control" id="prompt" placeholder="Enter your sentence here">
-                    <small class="form-text text-muted">We'll show you the closest quote to your prompt</small>
-                  </div>                
-                  <button type="submit" class="btn btn-primary">Submit</button>           
-             </form>
-            
-            {% if found|length %}
-            <br>
-            <div style="display:flex">
+            <div class="mt-4" style="display:flex">
                 <div class="card text-card" style="float:right;">
                     <div class="card-body">
-                        <div class="vertical-center">
-                            
-                            <h4 class="card-title mt-3 ms-3">We found a match!</h4>
-                            <h5 class="card-subtitle mb-2 ms-3 text-muted">Just see for yourself</h5>
-                            <p class="card-text ms-3">
-                                The closest quote to "{{original}}" is : {{found}}
+                        <div class="vertical-center">   
+                            <h4 class="card-title mt-3 ms-3">Clustering our speakers</h4>
+                            <h5 class="card-subtitle mb-2 ms-3 text-muted">Another way of assessing the polarization</h5>
+                            <p class="card-text ms-3">          
+                                Yes nice, but what about it? 
+                                Ideally, we would expect that different kinds of people speak differently, and that this clustering gives us 4 "personnas", robot portraits of who speaks in this way rather then that. Of course, the world is not ideal, but sometimes we get lucky. To characterise a cluster, we look at speakers closest to its center. In doing so we identify two clusters with pretty defined traits:
+                                <br>
+                                - US democrat politician (green)
+                                <br>
+                                - Foreign politicians (yellow)
                             </p>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="card" style="width: 40%; float:left; flex:1;">
-
                     <div class="card-body">
-                        <h5 class="card-subtitle mb-2 ms-3 text-muted">And here's where it was mapped</h5>
-
-                        <img class="card-img-top" src="static/W2V_quote.png" alt="full w2v" style:"width:30%">
+                        <img class="card-img-top" src="static/cluster.png" alt="full w2v" style:"height:40%;">
                     </div>
                 </div>
             </div>
-            {% endif %}
+            <div style="display:flex">
+                <div class="card" style="width: 40%; float:left; flex:1;">
+                    <div class="card-body">
+                        <table class="table mt-2" style="width:60%; margin :auto;">
+                            <thead>
+                                <tr>
+                                    <th>Purple Cluster</th>
+                                    <th>Blue Cluster</th>
+                                    <th>Green Cluster</th>
+                                    <th>Yellow Cluster</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td> Simon Bridges      </td><td> Mike Huckabee   </td><td> Frank Bainimarama </td><td> Mahamudu Bawumia </td></tr>
+                                <tr><td> Matt Canavan       </td><td> Samantha Bee    </td><td> Al Gore           </td><td> Muhammadu Buhari </td></tr>
+                                <tr><td> John Roberts       </td><td> John Kasich     </td><td> Chuck Schumer     </td><td>  Nana Akufo-Addo </td></tr>
+                                <tr><td> George Christensen </td><td> John Oliver     </td><td> Pete Buttigieg    </td><td> Sheikh Hasina    </td></tr>
+                                <tr><td> Shane Rattenbury   </td><td> Margaret Atwood </td><td> Nancy Pelosi      </td><td>     Dan Tehan    </td></tr>
+                                <tr><td> Josh Frydenberg    </td><td> Tucker Carlson  </td><td> Barack Obama      </td><td>  Godwin Obaseki  </td></tr>
+                                <tr><td> John Horgan        </td><td> Bill Clinton    </td><td> Caroline Lucas    </td><td>  Venkaiah Naidu  </td></tr>
+                                <tr><td> Maria Cantwell     </td><td> Shashi Tharoor  </td><td> Josh Earnest      </td><td> Pranab Mukherjee </td></tr>
+                                <tr><td> Richard Blumenthal </td><td> Lou Holtz       </td><td> Jeremy Corbyn     </td><td>  Philip Hammond  </td></tr>
+                                <tr><td> Yeo Bee Yin        </td><td> Richard Branson </td><td> Brian Schatz      </td><td>   John Swinney   </td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card" style="width: 60%; float:right; flex:1;">
+                    <div class="card-body">
+                        <div class="card-body">
+                            <img class="card-img-top" src="static/cluster_with_pictures.png" alt="full w2v" style:"height:40%;">
+                        </div>
+                    </div>             
+    
+                </div>             
+            </div>
+            
             
             <hr class="mt-4 mb-3"/>
 
@@ -794,77 +824,48 @@
 
 
             <hr class="mt-2 mb-3"/>
+ 
+            
+            <h4 id="bonus" class="mb-2 text-muted"> Your polarization</h3>
 
-            <div id="part6" class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-4">Building personnas</h1>
-                    <h2 class="lead mb-2 text-muted" >As if there weren't enough prejudice in the dataset</h2>
-                </div>
-            </div>
-            <p class="justified">
-                Now that we have various ways to identify our speakers, and how each of them speak, we can look for similarities and disparities between speakers, and how we can explain them. (TODO maybe redondant avec des parties du dessus l'intro de cette partie). 
-                Humans like to categorize, and we are humans, so let's go. We can cluster our speakers based on their speach-print, their word embeddings. Using KMeans, word embeddings of speakers cluster in the following way. 
-            </p>
-            <div class="mt-4" style="display:flex">
-                <div class="card" style="width: 40%; float:left; flex:1;">
-                    <div class="card-body">
-                        <img class="card-img-top" src="static/cluster.png" alt="full w2v" style:"height:40%;">
-                    </div>
-                </div>
-                <div class="card text-card" style="float:right;">
-                    <div class="card-body">
-                        <div class="vertical-center">   
-                            <h4 class="card-title mt-3 ms-3">Clustering our speakers</h4>
-                            <h5 class="card-subtitle mb-2 ms-3 text-muted">Another way of assessing the polarization</h5>
-                            <p class="card-text ms-3">          
-                                Yes nice, but what about it? 
-                                Ideally, we would expect that different kinds of people speak differently, and that this clustering gives us 4 "personnas", robot portraits of who speaks in this way rather then that. Of course, the world is not ideal, but sometimes we get lucky. To characterise a cluster, we look at speakers closest to its center. In doing so we identify two clusters with pretty defined traits:
-                                <br>
-                                - US democrat politician (green)
-                                <br>
-                                - Foreign politicians (yellow)
-                            </p>
-                        </div>
-                                
-                    </div>
-                </div>
-            </div>
-            <div style="display:flex">
-                <div class="card" style="width: 40%; float:left; flex:1;">
-                    <div class="card-body">
-                        <table class="table mt-2" style="width:60%; margin :auto;">
-                            <thead>
-                                <tr>
-                                    <th>Purple Cluster</th>
-                                    <th>Blue Cluster</th>
-                                    <th>Green Cluster</th>
-                                    <th>Yellow Cluster</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td> Simon Bridges      </td><td> Mike Huckabee   </td><td> Frank Bainimarama </td><td> Mahamudu Bawumia </td></tr>
-                                <tr><td> Matt Canavan       </td><td> Samantha Bee    </td><td> Al Gore           </td><td> Muhammadu Buhari </td></tr>
-                                <tr><td> John Roberts       </td><td> John Kasich     </td><td> Chuck Schumer     </td><td>  Nana Akufo-Addo </td></tr>
-                                <tr><td> George Christensen </td><td> John Oliver     </td><td> Pete Buttigieg    </td><td> Sheikh Hasina    </td></tr>
-                                <tr><td> Shane Rattenbury   </td><td> Margaret Atwood </td><td> Nancy Pelosi      </td><td>     Dan Tehan    </td></tr>
-                                <tr><td> Josh Frydenberg    </td><td> Tucker Carlson  </td><td> Barack Obama      </td><td>  Godwin Obaseki  </td></tr>
-                                <tr><td> John Horgan        </td><td> Bill Clinton    </td><td> Caroline Lucas    </td><td>  Venkaiah Naidu  </td></tr>
-                                <tr><td> Maria Cantwell     </td><td> Shashi Tharoor  </td><td> Josh Earnest      </td><td> Pranab Mukherjee </td></tr>
-                                <tr><td> Richard Blumenthal </td><td> Lou Holtz       </td><td> Jeremy Corbyn     </td><td>  Philip Hammond  </td></tr>
-                                <tr><td> Yeo Bee Yin        </td><td> Richard Branson </td><td> Brian Schatz      </td><td>   John Swinney   </td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="card" style="width: 60%; float:right; flex:1;">
-                    <div class="card-body">
+            
+                <p class="justified  mt-4 mb-4">
+                Word2Vec is also good for handling user input. Now you can try to input what you think about climate change and the program will be able to tell you who is close to you on the political compass and plot your sentence among all the others present in the dataset.
+                </p>
+                <form class="mt-2" method="POST" style="margin :auto; width:60%;">
+                    <div class="form-group">
+                        <label for="prompt">Try it yourself!</label>
+                        <input name="prompt" class="form-control" id="prompt" placeholder="Enter your sentence here">
+                        <small class="form-text text-muted">We'll show you the closest quote to your prompt</small>
+                      </div>                
+                      <button type="submit" class="btn btn-primary">Submit</button>           
+                 </form>
+                
+                {% if found|length %}
+                <br>
+                <div style="display:flex">
+                    <div class="card text-card" style="float:right;">
                         <div class="card-body">
-                            <img class="card-img-top" src="static/cluster_with_pictures.png" alt="full w2v" style:"height:40%;">
+                            <div class="vertical-center">
+                                
+                                <h4 class="card-title mt-3 ms-3">We found a match!</h4>
+                                <h5 class="card-subtitle mb-2 ms-3 text-muted">Just see for yourself</h5>
+                                <p class="card-text ms-3">
+                                    The closest quote to "{{original}}" is : {{found}}
+                                </p>
+                            </div>
                         </div>
-                    </div>             
+                    </div>
+                    <div class="card" style="width: 40%; float:left; flex:1;">
     
-                </div>             
-            </div>
+                        <div class="card-body">
+                            <h5 class="card-subtitle mb-2 ms-3 text-muted">And here's where it was mapped</h5>
+    
+                            <img class="card-img-top" src="static/W2V_quote.png" alt="full w2v" style:"width:30%">
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
             
         </div>  
 
