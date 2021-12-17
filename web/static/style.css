@@ -32,3 +32,8 @@ img{
     text-justify: inter-word;
     margin: auto;
 }
+.btn{
+    margin:auto;
+    width: 100%;
+    margin-bottom: 5px;
+}
