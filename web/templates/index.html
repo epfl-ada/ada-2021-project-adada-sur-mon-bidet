@@ -31,13 +31,13 @@
                         <a class ="nav-link active" href="#" onClick="document.getElementById('part2').scrollIntoView();return false;">Part 2</a>
                         </li> 
                         <li class="nav-item">
-                            <a class ="nav-link active" href="#" onClick="document.getElementById('part3').scrollIntoView();return false;">Part 3</a>
+                            <a class ="nav-link active" href="#" onClick="document.getElementById('part3').scrollIntoView();return false;">Demographics</a>
                         </li> 
                         <li class="nav-item">
-                            <a class ="nav-link active" href="#" onClick="document.getElementById('part4').scrollIntoView();return false;">Part 4</a>
+                            <a class ="nav-link active" href="#" onClick="document.getElementById('part4').scrollIntoView();return false;">Polarization</a>
                         </li> 
                         <li class="nav-item">
-                            <a class ="nav-link active" href="/bonus" >Bonus</a>
+                            <a class ="nav-link active"href="#" onClick="document.getElementById('bonus').scrollIntoView();return false;">Bonus</a>
                         </li>   
                     </ul> 
                     <span class="navbar-text">
@@ -163,11 +163,24 @@
 
 
             <img src="static/demographics.png" ></img> 
-            #TODO Greta sur le violon, Arack Bobama, Sernie Banders, Tronald Drump et un random republicain 
+            #TODO Greta sur le violon, Arack Bobama, Sernie Banders, Tronald Dump et un random republicain 
             <p>
                 Now there's a few things we can see here. 
+                First, there are way more democrats in the processed data than republicans. (7083 Democrats against 3887 Republicans)
+                This doesn't necessarly means that there are more democrats than republicans quotes in the news, 
+                but simply that republicans are less likely to express their views on durability issues. 
+                <br>
+                Oddly enough, the age seems fairly distributed between both political wings. The means are 3 months differents (Democrats are on average 62.15 years old). And both the median and the quartiles are equal (25%:52 years old,  50%:63years old, 75%: 72 years old).
+                However, the average speaker is way older than the average American (38.1 years old according to 2019's census).
+                <br>
             </p>
-
+            </p>
+                Depressingly as expected, women are completely under represented, 
+                a staggering 22.6% of Republicans are female (opposed to the 50.5% statitics from the census). 
+                Things are better with the Democrats (32.2%), although still completely way below the 50% mark.
+                <br>
+                Most of the speakers classified with an "other" gender, are for the most part misclasifications in our algorithms (due to foreign or androgyneous names and lack of information on wikipedia) and thus should not be interpreted in any ways.
+            </p>
 
             <hr class="mt-2 mb-3"/>
 
@@ -208,9 +221,8 @@
 
             <!--#SECTION Harold : Polarization-->
 
-            <h2 id="part2">Polarization</h2>
 
-            <div id="part2" class="jumbotron jumbotron-fluid">
+            <div id="part4" class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <h1 class="display-4">How do we speak about climate ?</h1>
                     <h2 class="lead mb-2 text-muted" >The fine details of its narrative in the news</h2>
@@ -542,7 +554,7 @@
 
             <br>
             <br>
-            <h4 class="mb-2 text-muted"> Your polarization</h3>
+            <h4 id="bonus" class="mb-2 text-muted"> Your polarization</h3>
 
             
 
@@ -701,9 +713,7 @@
             <hr class="mt-2 mb-3"/>
 
 
-            
-            
-            <h2>BONUS</h2>
+    
     
 
         </div>  
