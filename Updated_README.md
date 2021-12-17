@@ -55,8 +55,7 @@ Using our polarity score, we can now plot the polarity score of our corpus. We f
 
 Furthermore, we use word embedding with the help of PCA to project the quotes in 3D space and examine the semantic space separation. This allows us to assess the semantic difference between speeches that are polarized positively and negatively. We can try to assess the evolution, throughout time, of this semantic difference. The bigger it is, the more the speeches are different in their vocabulary and argumentation. Thus, the polarized group tends to be more and more opposed.
 
-
-
+Finally, we combine the speakers' features and polarity score to get an overview of how polarity evolves depending on political party to wrap up.
 
 
 ## Organization within the team:
