@@ -147,27 +147,26 @@
 
             <h3 class="text-muted mb-2">Demographics</h3>
             <p>
-                We need to know more about our speakers in order to differentiate them on a larger scale, and perhaps spot some peculiar influence on the distribution of their position.
-                Thus, we've chosen to add the gender, age and political affiliation to each speaker. 
-                To do so, we've ran a couple hundred of thousands wikepedia searches on the speakers. 
-                Some of their pages were neatly completed, and their current political party were filled in as well as their birthdate.
+                We need to know more about our speakers to differentiate them on a larger scale, and perhaps spot some peculiar influence on the distribution of their position.
+                Thus, we've chosen to add gender, age, and political affiliation to each speaker. 
+                To do so, we've run a couple of hundred of thousand Wikipedia searches on the speakers. 
+                Some of their pages were neatly completed, and their current political party was filled in as well as their birthdate.
             </p>
             <p>
                 Sadly, it was <strike>sometimes</strike>, well <strike>rarely</strike>, ... , <b>never</b> the case. 
-                Therefore, we've used some pretty minimalists heuristics to fill in each feature when we couldn't correctly recover the features.
-                For the political affiliation, we simply counted the occcurence of words like "socialist", or "right-wing" in each speakers page. 
-                Likewise, for the gender, we count the occurences of gendered pronoums. If we can't find enough of these pronoums, we use a classifer with the name of the speaker as input.
+                Therefore, we've used some pretty minimalist heuristics to fill in each feature when we couldn't correctly recover the features.
+                For the political affiliation, we simply counted the occurrences of words like "socialist", or "right-wing" on each speaker's page. 
+                Likewise, for gender, we count the occurrences of gendered pronouns. If we can't find enough of these pronouns, we use a classifier with the name of the speaker as input.
                 Although both of these heuristics are far from perfect, we've found it, most of the time, passed all the sanity checks.
-                Putting all of this together, we get the neat visualisation below.
+                Putting all of this together, we get the neat visualization below.
             </p>
 
 
-            <img src="static/demographics.png" ></img> 
-            #TODO Greta sur le violon, Arack Bobama, Sernie Banders, Tronald Dump et un random republicain 
+            <img src="static/demographics_annotated.png" ></img> 
             <p>
                 Now there's a few things we can see here. 
                 First, there are way more democrats in the processed data than republicans. (7083 Democrats against 3887 Republicans)
-                This doesn't necessarly means that there are more democrats than republicans quotes in the news, 
+                This doesn't necessarily mean that there are more democrats than republicans quotes in the news, 
                 but simply that republicans are less likely to express their views on durability issues. 
                 <br>
                 Oddly enough, the age seems fairly distributed between both political wings. The means are 3 months differents (Democrats are on average 62.15 years old). And both the median and the quartiles are equal (25%:52 years old,  50%:63years old, 75%: 72 years old).
@@ -175,11 +174,14 @@
                 <br>
             </p>
             </p>
-                Depressingly as expected, women are completely under represented, 
-                a staggering 22.6% of Republicans are female (opposed to the 50.5% statitics from the census). 
+                Depressingly as expected, women are completely underrepresented, 
+                a staggering 22.6% of Republicans are female (opposed to the 50.5% statistics from the census). 
                 Things are better with the Democrats (32.2%), although still completely way below the 50% mark.
                 <br>
-                Most of the speakers classified with an "other" gender, are for the most part misclasifications in our algorithms (due to foreign or androgyneous names and lack of information on wikipedia) and thus should not be interpreted in any ways.
+                Women speakers are on average younger than their male counterparts (59.6 years old for the Democrats and 58.3 years old for the Republicans). 
+            
+
+                Most of the speakers classified with "other" gender, are for the most part misclassifications in our algorithms (due to foreign or androgynous names and lack of information on Wikipedia) and thus should not be interpreted in anyways.
             </p>
 
             <hr class="mt-2 mb-3"/>
@@ -244,14 +246,14 @@
             
             Given a sentence, we use VADER (Valence Aware Dictionary and sEntiment Reasoner) to compute the polarity score.
             <br>
-            Valence, or hedonic tone, is the affective quality referring to the intrinsic attractiveness/"good"-ness (positive valence) or averseness/"bad"-ness (negative valence) of an object, in our case, text. The term also characterizes and categorizes specific emotions. For example, emotions popularly referred to as "negative", such as anger and fear, have negative valence. Joy has positive valence.
+            Valence, or hedonic tone, is the affective quality referring to the intrinsic attractiveness/"good"-ness (positive valence) or averseness/"bad"-ness (negative valence) of an object, in our case, text. The term also characterizes and categorizes specific emotions. For example, emotions popularly referred to as "negative", such as anger and fear, have negative valence. Joy has a positive valence.
             <br>
-            Thus, our polarity score score is computed by summing the valence scores of each word in the quotation, adjusted according to the rules, and then normalized to be between -1 (most extreme negative) and +1 (most extreme positive).
+            Thus, our polarity score is computed by summing the valence scores of each word in the quotation, adjusted according to the rules, and then normalized to be between -1 (most extreme negative) and +1 (most extreme positive).
 
             
             <h3 class="mb-2 text-muted"> Evolution of polarization</h3>
             
-            Given this polarity score assigned to each quotation, we can now study its behaviour under multiple point of views (time, age, gender, political party) and look at if certain topics arise as more dividing than others.
+            Given this polarity score assigned to each quotation, we can now study its behavior under multiple points of view (time, age, gender, political party) and look at if certain topics arise as more dividing than others.
             
             
 
@@ -268,7 +270,7 @@
                             <h4 class="card-title mt-3 ms-3">Polarity score distribution throughout all quotations</h5>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">Snarky comment pour montrer que l'on est cool</h6>
                             <p class="card-text ms-3">
-                                Let us first look at the distribution of polarity score throughout 2015 to 2020.
+                                Let us first look at the distribution of polarity scores from 2015 to 2020.
                                 <br>
                                 As we can see (warning, log scale !), a majority of the quotations are considered neutral (score of 0.0).
                                 The mean polarity score in our corpus is 0.27 with a standard deviation of 0.49. 
@@ -318,9 +320,9 @@
                             <h4 class="card-title mt-3 ms-3">Average polarity score throughout the years</h5>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">Snarky comment pour montrer que l'on est cool</h6>
                             <p class="card-text">
-                                Looking at the 2016 period, we might think that we have caught onto a particularly polarized period in the news! Who knows what very polarizing event happened during 2016 in the USA ? 
+                                Looking at the 2016 period, we might think that we have caught onto a particularly polarized period in the news! Who knows what very polarizing event happened during 2016 in the USA? 
                                 <br>
-                                But looking closely, it's a matter of having much less data during 2016 which makes the mean very sensitive to outliers. Tough luck....
+                                But looking closely, it's a matter of having much fewer data during 2016 which makes the mean very sensitive to outliers. Tough luck...
                                 <br>
                                 Therefore, as we can see, the average daily sentimental polarity of the quotation on climate change throughout the years is quite stable at around 0.27! Thus, the narrative around climate change seems to be slightly positive.
                                 
@@ -336,7 +338,7 @@
             
             <h2 class="mb-2"> Examining the different topics of climate change </h3>
 
-            After seeing that there was no noticeable evolution of the polarization of the narrative around climate change in a global scale, we decided to dig a little further and examine the narrative around specific topics.
+            After seeing that there was no noticeable evolution of the polarization of the narrative around climate change on a global scale, we decided to dig a little further and examine the narrative around specific topics.
             <br>
             <h3 class="mt-3 mb-2 text-muted">Polemic topics</h3>
 
@@ -347,13 +349,13 @@
             <br>
 
             Thus, a topic whose daily polarity score is very stable throughout time would not be considered controversial, as around the same level of sentimental polarity is expressed each day (e.g. we need to breathe to live). 
-            Whereas a topic where the daily polarity score tends to swing between -1 and 1, can be considered as a topic where there is expression of opposing views (e.g. anything about Trump).
+            Whereas a topic where the daily polarity score tends to swing between -1 and 1, can be considered as a topic where there is an expression of opposing views (e.g. anything about Trump).
             <br>
 
             Therefore, examining the empirical variance of the daily average polarity score of a given topic seems like a reasonable heuristic.
             <br>
             
-            This heuristic obviously assumes that there aren't consistently opposing views that cancel each other exactly the same day. This assumption tends to be hold, when looking at the data and its quantity.
+            This heuristic assumes that there aren't consistently opposing views that cancel each other exactly the same day. This assumption tends to hold when looking at the data and its quantity.
             <br>
             
             Using our heuristic, we extracted the top 4 most (non)polemic topics.
@@ -405,7 +407,7 @@
                             <h4 class="card-title mt-3 ms-3">Looking a little more closely at the topic of "Wildfires" and "Earth</h4>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">How the narratives evolves through time.</h5>
                             <p class="card-text ms-3">
-                                As we can see, non controversial topics have their distribution concentrated around a single polarity score which is positive for these 4 topics. 
+                                As we can see, non-controversial topics have their distribution concentrated around a single polarity score which is positive for these 4 topics. 
                                 <br>
                                 Whereas the distributions for the controversial are spread over the entire x axis which indicates a variety of opinions and a high likelihood of polarization. It is not the typical bimodal which represents the theorical polarized distribution but it is still quite different from the non-polemic topics.     
                             </p>
@@ -466,13 +468,13 @@
             <br>
 
             <h3 class="mb-2 text-muted"> Is the narrative polarized ?</h3>
-            When starting to work on the polarization of the narrative around climate change, we expected to see an opposition between a climate change skeptic narrative and a climate change alarmistic narrative. But, our findings don't back up our expectations.
+            When starting to work on the polarization of the narrative around climate change, we expected to see an opposition between a climate change skeptic narrative and a climate change the alarmistic narrative. But, our findings don't back up our expectations.
             
             Instead, as we can see from those two quotes, and it generalizes well to the rest of the corpus, quotes considered opposite by our sentimental polarity score tend to share a similar feeling: <b>Climate change is important and we need to act about it</b>. Indeed, the narrative around climate change can either be alarmistic about the current situation or hopeful and positive about the actions taken.
             
             <br>
 
-            Thus, either, the climate change skeptic narrative is actually much smaller than we think and is a case of a loud minority, or tools such as sentimental polarity and word embeddings are not the right tools to dissociate the two narratives.
+            Thus, either, the climate change skeptic narrative is actually much smaller than we think and is a case of a loud minority or tools such as sentimental polarity and word embeddings are not the right tools to dissociate the two narratives.
             
             <hr class="mt-2 mb-3"/>
             <!--#SECTION ANTOINE:W2V-->
@@ -480,11 +482,11 @@
 
             <h2 class="mb-2 text-muted"> Word embedding</h3>
 
-            Word2Vec is a word embedding technique used to compute a low-dimensional vector capturing the semantic meaning of a word. It aims to quantify and categorize semantic similarities between linguistic items based on their distributional properties in large samples of language data. Once we have a N-dimensional vector representing the semantic of a word we can compute such a vector for every quotation in the dataset by simply taking the mean of every word it contains. Therefore, in theory, two quotes at the different ends of the spectrum should have a large distance between them and this would let us compute a "semantic distance" between quotes. 
+            Word2Vec is a word embedding technique used to compute a low-dimensional vector capturing the semantic meaning of a word. It aims to quantify and categorize semantic similarities between linguistic items based on their distributional properties in large samples of language data. Once we have an N-dimensional vector representing the semantic of a word we can compute such a vector for every quotation in the dataset by simply taking the mean of every word it contains. Therefore, in theory, two quotes at the different ends of the spectrum should have a large distance between them and this would let us compute a "semantic distance" between quotes. 
             <br>
-            We chose to use a pretrained model with vector of dimensions N = 300. This model contained already all the word we encountered in selected quotation of Quotebank. 
+            We chose to use a pre-trained model with vectors of dimensions N = 300. This model contained already all the words we encountered in selected quotations of Quotebank. 
             <br>
-            We then added the polarization feature to each point to evaluate if the difference in the polarization has a reality in the semantic used by these speakers. Here we plotted the representation in the 3 principle components (computed with PCA).
+            We then added the polarization feature to each point to evaluate if the difference in the polarization has a reality in the semantics used by these speakers. Here we plotted the representation in the 3 principal components (computed with PCA).
 
             <div style="display:flex">
                 <div class="card" style="width: 40%; float:left; flex:1;">
@@ -499,7 +501,7 @@
                             <h4 class="card-title mt-3 ms-3">Polarity score distribution throughout all quotations</h5>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">Snarky comment pour montrer que l'on est cool</h6>
                             <p class="card-text ms-3">
-                                The points in red represent the quotes that are polarized above the mean value and the blue point are quotes less polarized than the average. We can see that there is no clear clustering between those two groups. Nevertheless that can be due to the fact that a lot of points are only "mildly polarized" and thus two points of different colors might end up with a very close polarity score. If we only considered the points that are strongly polarized, i.e. the 15% that are the most polarized and the 15% that are the less polarized we end up with the following structure :
+                                The points in red represent the quotes that are polarized above the mean value and the blue point are quoted less polarized than the average. We can see that there is no clear clustering between those two groups. Nevertheless, that can be because a lot of points are only "mildly polarized" and thus two points of different colors might end up with a very close polarity score. If we only considered the most polarized points, i.e. the 15% that are the most polarized and the 15% that are the less polarized we end up with the following structure :
                             </p>
                         </div>
 
@@ -530,7 +532,7 @@
             </div>
 
 
-            We can make the hypothesis that during the last year the debate might get more and more polarized and the semantic difference might increase between two people that have different opinion. To assess this difference we can use a metric used in this <a href="https://ieeexplore.ieee.org/document/8181508">paper</a> to compute the distance between two clusters based on the sentiment. It takes in account the ratio between the distance intra-cluster and inter-cluster. It thus gives one score for how much the two groups are clustered. With our assumption we would expect to find a increasing value of the metric. Nevertheless here is the serie of value we obtained :
+            We can make the hypothesis that during the last year the debate might get more and more polarized and the semantic difference might increase between two people that have different opinions. To assess this difference we can use a metric used in this <a href="https://ieeexplore.ieee.org/document/8181508">paper</a> to compute the distance between two clusters based on the sentiment. It takes into account the ratio between the distance intra-cluster and inter-cluster. It thus gives one score for how much the two groups are clustered. With our assumption, we would expect to find an increasing value of the metric. Nevertheless here is the series of values we obtained :
 
             <div style="display:flex">
                 <div class="card" style="width: 40%; float:left; flex:1;">
@@ -545,7 +547,7 @@
                             <h4 class="card-title mt-3 ms-3">The evolution of the semantic divide</h5>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">is definitely not what we expected</h6>
                             <p class="card-text ms-3">
-                                As we can see on the graph, this is not exactly what we obtained. In the first place, the huge variation in 2016 are actually due to the lack of data during these month which actually leads to noisy values. In the second place we can observe that the normalized cut throughout the years seem to be rather high (comprable to the paper's value) but really steady. There doesn't seem to be an overall increasing semantic difference between the group that is polarized positively and negatively.                                 
+                                As we can see on the graph, this is not exactly what we obtained. In the first place, the huge variations in 2016 are actually due to the lack of data during these months which leads to noisy values. In the second place, we can observe that the normalized cut throughout the years seems to be rather high (comparable to the paper's value) but really steady. There doesn't seem to be an overall increasing semantic difference between the group that is polarized positively and negatively.                                 
                             </p>
                         </div>
                                 
@@ -559,7 +561,7 @@
 
             
 
-            Word2Vec is also good for handling user input. Now you can try to input what you think about the climate change and the program will be able to tell you who is close from you on the political compass and plot your sentence among all the other present in the dataset.
+            Word2Vec is also good for handling user input. Now you can try to input what you think about climate change and the program will be able to tell you who is close to you on the political compass and plot your sentence among all the others present in the dataset.
             
             <form class="mt-2" method="POST">
                 <div class="form-group">
@@ -604,7 +606,7 @@
 
 
             <br>
-            Some topics might be more important for personalities from one wing then one from another. These topic are thus important in politics because they might convince a lot of electors to vote for someone if they feel they care about the same thing. These subjects are thus really important. We would thus like to find out, for each political wing, which topic they take ownership of.
+            Some topics might be more important for personalities from one wing than one from another. These topics are thus important in politics because they might convince a lot of electors to vote for someone if they feel they care about the same thing. These subjects are thus really important. We would thus like to find out, for each political wing, which topic they take ownership of.
             <br>
             At first we tried to look at the occurences of each topics in each wing. Here are the result for some example topics :
             <div style="display:flex">
@@ -627,7 +629,7 @@
                 </div>
             </div>
 
-            Nevertheless, we can see that most of these graphs shows an important presence of the democrat in most of the topics. That due to the fact that overall, more democrat talk about these kind of issues than republican.
+            Nevertheless, we can see that most of these graphs show an important presence of the democrat in most of the topics. That is since overall, more Democrats talk about these kinds of issues than Republicans.
 
             So we need to study the proportion of the speaker of each wing that talked about each of these issues to get rid of these problem. We thus end up with this graph :
 
@@ -640,7 +642,7 @@
                             <h4 class="card-title mt-3 ms-3">Studying the proportion of speakers from each wing</h4>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">Who cares enough to talk about it</h5>
                             <p class="card-text ms-3">
-                                In this one we see that both wings seemed to answer each other pretty well. Nevertheless some topics tends to have a small be more slightly more used by a wing then by the other. For instance, republicans talk more about <b>hurricane</b> or <b>earth</b> as the democrat would do. That's not really surprising because as <a href="https://www.nbcnews.com/think/opinion/if-republicans-really-cared-about-hurricane-victims-they-d-stop-ncna1238686">this article</a> suggests is that Republican tend to talk a lot about hurricane but not necessarly to talk about deeper problem of climate. That's allows what can suggests the wider utilization of <b>earth</b>. On the other hand democrat are more inclined to talk about <b>coal</b>, <b>energies</b>, or <b>solar</b> power.
+                                In this one, we see that both wings seemed to answer each other pretty well. Nevertheless, some topics tend to have a small be more slightly more used by a wing than by the other. For instance, republicans talk more about <b>hurricanes</b> or <b>earth</b> as the democrat would do. That's not really surprising because as <a href="https://www.nbcnews.com/think/opinion/if-republicans-really-cared-about-hurricane-victims-they-d-stop-ncna1238686">this article</a> suggests is that Republicans tend to talk a lot about hurricanes but not necessarily to talk about the deeper problem of climate. That's also what can suggest the wider utilization of <b>earth</b>. On the other hand Democrats are more inclined to talk about <b>coal</b>, <b>energies</b>, or <b>solar</b> power.
                             </p>
                         </div>
                                 
@@ -677,7 +679,7 @@
                                     <b>sequestration</b> and
                                     <b>sustainability</b>.  
                                     <br>          
-                                    They were some other topics that had a big difference in polarization but the small amount of speakers dealing with these makes it not statistically significant.
+                                    They were some other topics that had a big difference in polarization but the small number of speakers dealing with these makes it not statistically significant.
 
                             </p>
                         </div>
@@ -694,9 +696,9 @@
                             <h4 class="card-title mt-3 ms-3">Semantic Separation</h4>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">Another way of assessing the polarization</h5>
                             <p class="card-text ms-3">
-                                Studying the way the semantic varies between the speakers for each topic that are polarized positively and negatively as we did for the whole group before allows us to asses the polarization. In this we hope to find, throughout time, an evolution in the way the speakers argue about particular topics. If the distance increases we could deduce that the semantic difference in the speeches tends to grow over time showing that the subject becomes more and more cleaving. We also think we could find subject for which this distance remains steady, meaning the debate tends to remain the same overtime. Finally there might be topics for which the speech tends to become more and more similar. The normalized cut would reduce. Indeed we find subject following each of these trends.
+                                Studying the way the semantic varies between the speakers for each topic that are polarized positively and negatively as we did for the whole group before allows us to assess the polarization. In this part, we hope to find, throughout time, an evolution in the way the speakers argue about particular topics. If the distance increases we could deduce that the semantic difference in the speeches tends to grow over time showing that the subject becomes more and more cleaving. We also think we could find subjects for which this distance remains steady, meaning the debate tends to remain the same over time. Finally, there might be topics for which the speech tends to become more and more similar. The normalized cut would reduce. Indeed we find subjects following each of these trends.
                                 <br>
-                                As we see here, speeches about <b>deforestation</b> tends to get more and more polarized semanticaly. <b>Methane</b> follows a similar track but half as fast. The debate on <b>energy</b> has a high distance between the two groups but this distance is constant. The debate and the polarization doesn't seem to vary so much over time. More over we can see that the debates on <b>ozone</b> tend to be less and less cleaving. That may be due to the fact that this problem that emergered in the late 90's is now considered less important than other or that every one reaches a similar opinion, using the same term and same amount of polarization in there speeches. On the other hand, the awarness about deforestation has risen these last year following the wildfires that occured in Amazonia for instance.
+                                As we see here, speeches about <b>deforestation</b> tend to get more and more polarized semantically. <b>Methane</b> follows a similar track but half as fast. The debate on <b>energy</b> has a high distance between the two groups but this distance is constant. The debate and the polarization don't seem to vary so much over time. Moreover, we can see that the debates on <b>ozone</b> tend to be less and less cleaving. That may be because this problem that emerged in the late '90s is now considered less important (and more or less solved) than others or that everyone reaches a similar opinion, using the same term and same amount of polarization in their speeches. On the other hand, the awareness about deforestation has risen these last year following the wildfires that occurred in Amazonia for instance.
 
                             </p>
                         </div>
