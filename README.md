@@ -9,7 +9,7 @@ As the effects of climate change become increasingly visible in our daily life, 
 
 The supporting notebook extending the one delivered for Milestone 2 is `milestone3.ipynb`.
 
-Our data story can be found here: INSERT URL
+Our data story can be found here: https://adada-sur-mon-bidet.ch/
 
 ## Research questions:
 
