@@ -30,7 +30,11 @@ In the rest of our analysis, we assume that the quotes that we are working on in
 
 ### Examining the people driving the climate change narrative
 
+To understand and exploit text data to its fullest, it is important to understand the context and origin of the data. In the case of Quotebank, this boils down to understanding who is quoted. 
 
+To achieve this goal, we use Wikipedia data to associate features to our speakers such as age, gender and political party.
+
+Using these features, we can come up with a global view of the speakers in our dataset.
 
 ### How to measure and extract polarization ?:
 
