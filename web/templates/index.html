@@ -87,7 +87,7 @@
             <p class="justified mb-4">
                 What are we working with? Quotes, about climate.    
                 <br>
-                Weeeell actually to be precise it's quotes that contain a word from vocabulary that revolves around climate issues, for example "energy" or "typhoon" or "agriculture". But "The Rolling Stones play with such energy" does not talk about climate at all right? This is a false positive (FP): naïvely looks like a climate quote, but really isn't. There will always be some FP, but too much is a problem as it would discrit any further result. We some strict filtering to reduce our rate of FPs, at the cost of loosing true positives of course. This still seemed like the right way to go. Notable trouble makers where "energy" or "atmosphere", that oftentimes are used in an abstract way.
+                Actually, between you and me, they are quotes that contain a word from the vocabulary that revolves around climate issues, for example "energy" or "typhoon" or "agriculture". But "The Rolling Stones play with such energy" does not talk about climate at all right? This is a false positive (FP): naïvely looks like a climate quote, but really isn't. There will always be some FP, but too much is a problem as it would discrit any further result. We some strict filtering to reduce our rate of FPs, at the cost of loosing true positives of course. This still seemed like the right way to go. Notable trouble makers where "energy" or "atmosphere", that oftentimes are used in an abstract way.
                 <br>    
                 <br>
                 In addition of the quotes, we also have the speaker's name, the date they said or wrote the quote, and the number of times this quote has been in a quotebank article.
@@ -279,9 +279,9 @@
                             <h4 class="card-title mt-3 ms-3">Looking closer at the gender distribution </h4>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">We wouldn't miss a chance to rant about it</h5>
                             <p class="card-text">
-                                Depressingly as expected, women are completely underrepresented, 
+                                Depressingly as expected, women are overall underrepresented, 
                                 a staggering 22.6% of Republicans are female (opposed to the 50.5% statistics from the census). 
-                                Things are better with the Democrats (32.2%), although still completely way below the 50% mark.           
+                                Things are better with the Democrats (32.2%), although still way below the 50% mark.           
                                 <br>
                                 Women speakers are on average younger than their male counterparts (59.6 years old for the Democrats and 58.3 years old for the Republicans). 
                                 <br>
@@ -349,7 +349,7 @@
                             <h4 class="card-title mt-3 ms-3">Polarity score distribution throughout all quotations</h5>
                             <h5 class="card-subtitle mb-2 ms-3 text-muted">We need to go deeper!</h6>
                             <p class="card-text ms-3">
-                                Let us first look at the distribution of polarity scores from 2015 to 2020.
+                                Let us first look at the distribution of polarity scores.
                                 <br>
                                 As we can see (warning, log scale !), a majority of the quotations are considered neutral (score of 0.0).
                                 The mean polarity score in our corpus is 0.27 with a standard deviation of 0.49. 
@@ -372,7 +372,7 @@
                                 <br>
                                 As we can see, polarity seems to be very constant throughout the years. Similarly, we looked throughout the months and didn't find anything significant.
                 
-                                Maybe, all we need is finer granularity ! Let's look at the daily average polarity score throughout the years.
+                                Maybe all we need is finer granularity ! Let's look at the daily average polarity score throughout the years.
                             </p>
                         </div>
                     </div>
@@ -427,8 +427,8 @@
                 Looking at the definition of <b>controversy</b> from Werriam-Webster, we see: <i>"a discussion marked especially by the expression of opposing views".</i>
                 <br>
 
-                Thus, a topic whose daily polarity score is very stable throughout time would not be considered controversial, as around the same level of sentimental polarity is expressed each day (e.g. we need to breathe to live). 
-                Whereas a topic where the daily polarity score tends to swing between -1 and 1, can be considered as a topic where there is an expression of opposing views (e.g. anything about Trump).
+                Thus, a topic whose daily polarity score is very stable throughout time would not be considered controversial, as around the same level of sentimental polarity is expressed each day (e.g. <i> we need to breathe to live </i>). 
+                Whereas a topic where the daily polarity score tends to swing between -1 and 1, can be considered as a topic where there is an expression of opposing views (e.g. <i> Trump's election</i>).
                 <br>
 
                 Therefore, examining the empirical variance of the daily average polarity score of a given topic seems like a reasonable heuristic.
@@ -444,7 +444,7 @@
                         <tr>
                             <th>Rankings</th>
                             <th>Most polemic topics</th>
-                            <th>Most non-polemic topics</th>
+                            <th>Least polemic topics</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -546,23 +546,27 @@
                 <br>
                 <br>
             </p>
-            <h3 class="mb-2 text-muted"> Is the narrative polarized ?</h3>
-            <p class="justified">
-                When starting to work on the polarization of the narrative around climate change, we expected to see an opposition between a climate change skeptic narrative and a climate change the alarmistic narrative. But, our findings don't back up our expectations.
-                
-                Instead, as we can see from those two quotes, and it generalizes well to the rest of the corpus, quotes considered opposite by our sentimental polarity score tend to share a similar feeling: <b>Climate change is important and we need to act about it</b>. Indeed, the narrative around climate change can either be alarmistic about the current situation or hopeful and positive about the actions taken.
-                
-                <br>
-
-                Thus, either, the climate change skeptic narrative is actually much smaller than we think and is a case of a loud minority or tools such as sentimental polarity and word embeddings are not the right tools to dissociate the two narratives.
-            </p>
+            
             
             <divclass="jumbotron jumbotron-fluid conclusion">
                 <div class="container" style="width:60%; background-color:#f5f5f5;">
-                    <h3 class="display-4">Regarde cette conclu</h3>
-                    <h4 class="lead mb-2 text-muted" >Tres insightfull</h4>
+                    <h3 class="display-4">Is the narrative polarized?</h3>
+                    <h4 class="lead mb-2 text-muted" >People are less climate skeptic than we thought</h4>
+
+                    <p class="justified">
+                        When starting to work on the polarization of the narrative around climate change, we expected to see an opposition between a climate change skeptic narrative and a climate change alarmistic narrative. But, our findings don't back up our expectations.
+                        
+                        Instead, as we can see from those two quotes, and it generalizes well to the rest of the corpus, quotes considered opposite by our sentimental polarity score tend to share a similar feeling: <b>Climate change is important and we need to act about it</b>. Indeed, the narrative around climate change can either be alarmistic about the current situation or hopeful and positive about the actions taken.
+                        
+                        <br>
+        
+                        Thus, either, the climate change skeptic narrative is actually much smaller than we think and is a case of a loud minority or tools such as sentimental polarity and word embeddings are not the right tools to dissociate the two narratives.
+                    </p>
+
                 </div>
             </div>
+
+
             <hr class="mt-2 mb-3"/>
             <!--#SECTION ANTOINE:W2V-->
 
